@@ -7,25 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4045F6172C01978500422790 /* GFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4045F6162C01978500422790 /* GFButton.swift */; };
+		405EBE8F2C01C58F00A46C5D /* GFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405EBE8E2C01C58F00A46C5D /* GFTextField.swift */; };
 		40C676DE2C0094DC006B64F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C676DD2C0094DC006B64F8 /* AppDelegate.swift */; };
 		40C676E02C0094DC006B64F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C676DF2C0094DC006B64F8 /* SceneDelegate.swift */; };
-		40C676E22C0094DC006B64F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C676E12C0094DC006B64F8 /* ViewController.swift */; };
-		40C676E52C0094DC006B64F8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 40C676E42C0094DC006B64F8 /* Base */; };
 		40C676E82C0094DC006B64F8 /* GHFollowers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40C676E62C0094DC006B64F8 /* GHFollowers.xcdatamodeld */; };
 		40C676EA2C0094DF006B64F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40C676E92C0094DF006B64F8 /* Assets.xcassets */; };
 		40C676ED2C0094DF006B64F8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 40C676EC2C0094DF006B64F8 /* Base */; };
+		40C676F72C018006006B64F8 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C676F62C018006006B64F8 /* SearchVC.swift */; };
+		40C676F92C018073006B64F8 /* FavoritesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C676F82C018073006B64F8 /* FavoritesListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4045F6162C01978500422790 /* GFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFButton.swift; sourceTree = "<group>"; };
+		405EBE8E2C01C58F00A46C5D /* GFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTextField.swift; sourceTree = "<group>"; };
 		40C676DA2C0094DC006B64F8 /* GHFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C676DD2C0094DC006B64F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40C676DF2C0094DC006B64F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		40C676E12C0094DC006B64F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		40C676E42C0094DC006B64F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		40C676E72C0094DC006B64F8 /* GHFollowers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GHFollowers.xcdatamodel; sourceTree = "<group>"; };
 		40C676E92C0094DF006B64F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40C676EC2C0094DF006B64F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40C676EE2C0094DF006B64F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40C676F62C018006006B64F8 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		40C676F82C018073006B64F8 /* FavoritesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +43,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4045F6152C0189CE00422790 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				40C676F62C018006006B64F8 /* SearchVC.swift */,
+				40C676F82C018073006B64F8 /* FavoritesListVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		405EBE902C01CF1500A46C5D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				405EBE8E2C01C58F00A46C5D /* GFTextField.swift */,
+				4045F6162C01978500422790 /* GFButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		40C676D12C0094DC006B64F8 = {
 			isa = PBXGroup;
 			children = (
@@ -60,8 +82,8 @@
 			children = (
 				40C676DD2C0094DC006B64F8 /* AppDelegate.swift */,
 				40C676DF2C0094DC006B64F8 /* SceneDelegate.swift */,
-				40C676E12C0094DC006B64F8 /* ViewController.swift */,
-				40C676E32C0094DC006B64F8 /* Main.storyboard */,
+				405EBE902C01CF1500A46C5D /* Views */,
+				4045F6152C0189CE00422790 /* Controllers */,
 				40C676E92C0094DF006B64F8 /* Assets.xcassets */,
 				40C676EB2C0094DF006B64F8 /* LaunchScreen.storyboard */,
 				40C676EE2C0094DF006B64F8 /* Info.plist */,
@@ -130,7 +152,6 @@
 			files = (
 				40C676EA2C0094DF006B64F8 /* Assets.xcassets in Resources */,
 				40C676ED2C0094DF006B64F8 /* Base in Resources */,
-				40C676E52C0094DC006B64F8 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,24 +162,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40C676F72C018006006B64F8 /* SearchVC.swift in Sources */,
 				40C676E82C0094DC006B64F8 /* GHFollowers.xcdatamodeld in Sources */,
-				40C676E22C0094DC006B64F8 /* ViewController.swift in Sources */,
+				4045F6172C01978500422790 /* GFButton.swift in Sources */,
+				40C676F92C018073006B64F8 /* FavoritesListVC.swift in Sources */,
 				40C676DE2C0094DC006B64F8 /* AppDelegate.swift in Sources */,
 				40C676E02C0094DC006B64F8 /* SceneDelegate.swift in Sources */,
+				405EBE8F2C01C58F00A46C5D /* GFTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		40C676E32C0094DC006B64F8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				40C676E42C0094DC006B64F8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		40C676EB2C0094DF006B64F8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -301,9 +317,7 @@
 				INFOPLIST_FILE = GHFollowers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -329,9 +343,7 @@
 				INFOPLIST_FILE = GHFollowers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
