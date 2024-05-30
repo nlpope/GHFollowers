@@ -79,3 +79,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+//MARK: NOTES SECTION
+/**
+ --------------------------
+ SHORTCUTS:
+ * create new code snippets: right click + "create code snippet"
+ * edit this code snippet: cmd + shift + L
+ * emoji keyboard: cmd + cntrl + spacebar
+ * importing UIKit also imports Foundation (never import Foundation)
+ * storyboard object lisit: cmd + shift + L (double check?)
+ 
+ * access quick actions (XCode 15) = cmd + shift + a
+ > use to access 'minimap'
+ > use to quick change 'theme' - current = midnight
+ * clean XCode build folder = cmd + shift + K
+ * create new XCode internal tab = cmd + ctrl + T
+ * duplicate a line = cmd + D
+ * edit multiple lines at once: control + shift + click away then start typing
+ * hide/reveal debug area = cmd + shift + Y
+ * hide/reveal console = cmd + shift + C
+ * hide/reveal left pane = cmd + 0
+ * hide/reveal right pane = cmd + shift + 0
+ * hide/reveal preview window = cmd + shift + enter
+ 
+ 
+ --------------------------
+ XXXXXXXXXXXXXXXXXXXXXXXX
+ XXXXXXXXXXXXXXXXXXXXXXXX
+ --------------------------
+ GOALS (check bookmarks):
+ *
+ 
+ --------------------------
+ XXXXXXXXXXXXXXXXXXXXXXXX
+ XXXXXXXXXXXXXXXXXXXXXXXX
+ --------------------------
+ PROJECT NOTES:
+ *
+ --------------------------
+ 
+ */
