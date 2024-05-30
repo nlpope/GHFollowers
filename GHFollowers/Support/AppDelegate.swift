@@ -116,7 +116,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  XXXXXXXXXXXXXXXXXXXXXXXX
  --------------------------
  PROJECT NOTES:
- *
+ * MVC = "Does my View Controller need to know about this?"
+ > the background color, border width, & corner radius of a container for an alert? No; Include in separate UIView
+ > NSLayoutContstraints for the container? Yes.
+ > instead of MVC, MVVM, etc. start with:
+ >> Extensions
+ >> Custom Views
+ >> Screens (VCs)
+ >> Support (App/Scene Delegate, Info.plist, etc.)
  --------------------------
  
  */
