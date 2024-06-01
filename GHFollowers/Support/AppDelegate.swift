@@ -116,6 +116,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  XXXXXXXXXXXXXXXXXXXXXXXX
  --------------------------
  PROJECT NOTES:
+ * API call testing
+ > open terminal, from home directory type "curl [paste URL]"
  * MVC = "Does my View Controller need to know about this?"
  > the background color, border width, & corner radius of a container for an alert? No; Include in separate UIView
  > NSLayoutContstraints for the container? Yes.
@@ -123,7 +125,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  >> Extensions
  >> Custom Views
  >> Screens (VCs)
- >> Support (App/Scene Delegate, Info.plist, etc.)
+ >> Support (App/Scene Delegate, Assets, etc.)
  --------------------------
  
  */
