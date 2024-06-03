@@ -87,6 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  * create new code snippets: right click + "create code snippet"
  * edit this code snippet: cmd + shift + L
  * emoji keyboard: cmd + cntrl + spacebar
+ * force quit on mac: cmd + opt + esc
  * importing UIKit also imports Foundation (never import Foundation)
  * storyboard object lisit: cmd + shift + L (double check?)
  
@@ -125,7 +126,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  >> Extensions
  >> Custom Views
  >> Screens (VCs)
- >> Support (App/Scene Delegate, Assets, etc.)
+ >> Support (App/Scene Delegate, Assets, etc.)//MARK: NOTES SECTION
+ /**
+  --------------------------
+  SHORTCUTS:
+  * create new code snippets: right click + "create code snippet"
+  * edit this code snippet: cmd + shift + L
+  * emoji keyboard: cmd + cntrl + spacebar
+  * importing UIKit also imports Foundation (never import Foundation)
+  * storyboard object lisit: cmd + shift + L (double check?)
+  
+  * access quick actions (XCode 15) = cmd + shift + a
+  > use to access 'minimap'
+  > use to quick change 'theme' - current = midnight
+  * clean XCode build folder = cmd + shift + K
+  * create new XCode internal tab = cmd + ctrl + T
+  * duplicate a line = cmd + D
+  * edit multiple lines at once: control + shift + click away then start typing
+  * hide/reveal debug area = cmd + shift + Y
+  * hide/reveal console = cmd + shift + C
+  * hide/reveal left pane = cmd + 0
+  * hide/reveal right pane = cmd + shift + 0
+  * hide/reveal preview window = cmd + shift + enter
+  
+  
+  --------------------------
+  XXXXXXXXXXXXXXXXXXXXXXXX
+  XXXXXXXXXXXXXXXXXXXXXXXX
+  --------------------------
+  GOALS (check bookmarks):
+  *
+  
+  --------------------------
+  XXXXXXXXXXXXXXXXXXXXXXXX
+  XXXXXXXXXXXXXXXXXXXXXXXX
+  --------------------------
+  PROJECT NOTES:
+  * MVC = "Does my View Controller need to know about this?"
+  > the background color, border width, & corner radius of a container for an alert? No; Include in separate UIView
+  > NSLayoutContstraints for the container? Yes.
+  > instead of MVC, MVVM, etc. start with:
+  >> Extensions
+  >> Custom Views
+  >> Screens (VCs)
+  >> Support (App/Scene Delegate, Assets, etc.)
+  --------------------------
+  
+  */
  --------------------------
  
  */

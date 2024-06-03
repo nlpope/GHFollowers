@@ -36,13 +36,15 @@ class NetworkManager {
             
             guard let data = data else {
                 completed(nil, "The data received from the server was invalid. Please try again.")
+                return
             }
             
             do {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let followers = try decoder.decode([Follower].self, from: data)
             } catch {
-                
+                completed(nil, "The data received from the server was invalid. Please try again.")
             }
         }
         
