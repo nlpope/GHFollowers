@@ -7,8 +7,13 @@
 
 import Foundation
 
-struct Follower: Codable {
-    //camel case allowed for Codable's auto-conversion to snake_case
+struct Follower: Codable, Hashable {
+    //camel case allowed for Codable's conversion to snake_case @ call site
     var login: String
     var avatarUrl: String
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(login)
+    }
 }
+

@@ -84,18 +84,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 /**
  --------------------------
  SHORTCUTS:
+ * bookmark goals by right clicking a line
  * create new code snippets: right click + "create code snippet"
  * edit this code snippet: cmd + shift + L
  * emoji keyboard: cmd + cntrl + spacebar
  * force quit on mac: cmd + opt + esc
- * importing UIKit also imports Foundation (never import Foundation)
- * storyboard object lisit: cmd + shift + L (double check?)
+ * importing UIKit also imports Foundation (never import Foundation if UIkit is in play)
+ * storyboard object list: cmd + shift + L (double check?)
  
  * access quick actions (XCode 15) = cmd + shift + a
  > use to access 'minimap'
  > use to quick change 'theme' - current = midnight
  * clean XCode build folder = cmd + shift + K
  * create new XCode internal tab = cmd + ctrl + T
+ > hotkey for this = opt + click any file in your project folder
  * duplicate a line = cmd + D
  * edit multiple lines at once: control + shift + click away then start typing
  * hide/reveal debug area = cmd + shift + Y
@@ -104,27 +106,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  * hide/reveal right pane = cmd + shift + 0
  * hide/reveal preview window = cmd + shift + enter
  
- 
- --------------------------
- XXXXXXXXXXXXXXXXXXXXXXXX
- XXXXXXXXXXXXXXXXXXXXXXXX
- --------------------------
- GOALS (check bookmarks):
- *
  --------------------------
  XXXXXXXXXXXXXXXXXXXXXXXX
  XXXXXXXXXXXXXXXXXXXXXXXX
  --------------------------
  PROJECT NOTES:
  * MVC = "Does my View Controller need to know about this?"
- > the background color, border width, & corner radius of a container for an alert? No; Include in separate UIView
- > NSLayoutContstraints for the container? Yes.
- > instead of MVC, MVVM, etc. start with:
- >> Extensions
- >> Custom Views
- >> Screens (VCs)
- >> Support (App/Scene Delegate, Assets, etc.)
+ >  basically if you see NO GREEN (ref's to the VC) in the func, it can be refactored out of the VC to another file.
+ >> the background color, border width, & corner radius of a container for an alert? No; Include in separate UIView
+ >> NSLayoutContstraints for the container? Yes.
+ >> if a view was referenced in the OG func for it being in a VC and is throwing an error once you move it to your UIHelper struct, pass in the view using ‘(in view: UIView)’
  
+ * instead of MVC, MVVM, etc. start with:
+ > Extensions
+ > Custom Views
+ > Screens (VCs)
+ > Support (App/Scene Delegate, Assets, etc.)
  --------------------------
  
  */
