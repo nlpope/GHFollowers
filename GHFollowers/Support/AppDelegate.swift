@@ -123,6 +123,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  > Custom Views
  > Screens (VCs)
  > Support (App/Scene Delegate, Assets, etc.)
+ 
+ GFAvatarImageView
+ 1. intentionally not handling errors for inclusion of placeholder images
+ .. unlike for the network call for the Follower's username, login, etc.
+ .. otherwise, we'd be interrupting with error msg's for a very common instance
  --------------------------
  
  */
