@@ -43,6 +43,7 @@ class GFAvatarImageView: UIImageView {
         //see note 1 in project notes
         guard let url = URL(string: urlString) else { return }
         
+        //this is where the image is downloaded
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
             guard let self = self else {return}
             
@@ -50,12 +51,11 @@ class GFAvatarImageView: UIImageView {
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }
             guard let data = data else { return }
             
-            //this is where the image is downloaded
             guard let image = UIImage(data: data) else { return }
+            self.cache.setObject(image, forKey: cacheKey)
             
-            DispatchQueue.main.async {
-                self.image = image
-            }
+            //UI update - switch to main thread
+            DispatchQueue.main.async { self.image = image }
         }
         
         task.resume()
