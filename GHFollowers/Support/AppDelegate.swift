@@ -85,6 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  --------------------------
  SHORTCUTS:
  * bookmark goals by right clicking a line
+ > more preferably, type '#warning("message")' instead to have TO DO ITEMS UP FRONT
  * create new code snippets: right click + "create code snippet"
  * edit this code snippet: cmd + shift + L
  * emoji keyboard: cmd + cntrl + spacebar
@@ -123,20 +124,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  > Custom Views
  > Screens (VCs)
  > Support (App/Scene Delegate, Assets, etc.)
- 
- GFAvatarImageView
- 1. intentionally not handling errors for inclusion of placeholder images
- .. unlike for the network call for the Follower's username, login, etc.
- .. otherwise, we'd be interrupting with error msg's for a very common instance
- 
- FollowerListVC
- 2. this is where the NetworkManager's 'completed(.success(followers))' is used
- .. instead of laying out the logic in themanager, it uses the @escaping logic to pass the result through a closure via the VC it's used in
- .. the manager's 'completed(.success(followers))' just says 'now that we have the escaping result, use it in the closure's > switch statement's > success case in your VC
- 
- PROBLEM: THE FOLLOWERLISTVC LOADS THE NEW FOLLOWERS BUT ONLY REPLACES WHAT'S ALREADY THERE INSTEAD OF APPENDING THE NEW PAGE TO THE EXISTING LIST
- > sltn: I never set the delegate in the configureCollectionView func
- > thanks to Radames Vega-Alfaro's comment on pagination example vid to use Xcode > Developer Tool > FileMerge to compare differences
  --------------------------
  
  */
