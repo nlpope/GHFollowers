@@ -135,6 +135,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  .. the manager's 'completed(.success(followers))' just says 'now that we have the escaping result, use it in the closure's > switch statement's > success case in your VC
  
  PROBLEM: THE FOLLOWERLISTVC LOADS THE NEW FOLLOWERS BUT ONLY REPLACES WHAT'S ALREADY THERE INSTEAD OF APPENDING THE NEW PAGE TO THE EXISTING LIST
+ > sltn: I never set the delegate in the configureCollectionView func
+ > thanks to Radames Vega-Alfaro's comment on pagination example vid to use Xcode > Developer Tool > FileMerge to compare differences
  --------------------------
  
  */

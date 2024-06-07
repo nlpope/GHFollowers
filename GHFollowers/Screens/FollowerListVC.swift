@@ -10,7 +10,7 @@ import UIKit
 class FollowerListVC: UIViewController {
     
     //for UICollectionViewDiffableDataSource
-    enum Section {case main}
+    enum Section { case main }
 
     var username: String!
     var followers: [Follower] = []
@@ -45,6 +45,7 @@ class FollowerListVC: UIViewController {
     func configureCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: view))
         view.addSubview(collectionView)
+        collectionView.delegate = self
         collectionView.backgroundColor = .systemBackground
         collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
     }
@@ -52,14 +53,13 @@ class FollowerListVC: UIViewController {
     
     func getFollowers(username: String, page: Int) {
         NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
-            guard let self = self else {return}
+            guard let self = self else { return }
             
             switch result {
             //see note 2 in app delegate
             case .success(let followers):
                 if followers.count < 100 { self.hasMoreFollowers = false }
-//                self.followers.append(contentsOf: followers)
-                self.followers += followers
+                self.followers.append(contentsOf: followers)
                 self.updateData()
                 
             case .failure(let error):
