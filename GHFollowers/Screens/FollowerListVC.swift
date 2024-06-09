@@ -24,6 +24,7 @@ class FollowerListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureVC()
+        configureSearchController()
         configureCollectionView()
         getFollowers(username: username, page: page)
         configureDataSource()
@@ -43,11 +44,22 @@ class FollowerListVC: UIViewController {
     
     
     func configureCollectionView() {
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: view))
+        collectionView                  = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: view))
         view.addSubview(collectionView)
-        collectionView.delegate = self
-        collectionView.backgroundColor = .systemBackground
+        collectionView.delegate         = self
+        collectionView.backgroundColor  = .systemBackground
         collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
+    }
+    
+    
+    func configureSearchController() {
+        let mySearchController                                  = UISearchController()
+        mySearchController.searchResultsUpdater                 = self
+        mySearchController.searchBar.placeholder                = "Search for a username"
+        mySearchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController                         = mySearchController
+        navigationItem.hidesSearchBarWhenScrolling              = false
+
     }
     
     
@@ -63,8 +75,6 @@ class FollowerListVC: UIViewController {
                 if followers.count < 100 { self.hasMoreFollowers = false }
                 self.followers.append(contentsOf: followers)
                 
-                #warning("delete array emptier")
-                self.followers = []
                 if self.followers.isEmpty {
                     let message = "This user doesn't have any followers. Go follow them 😀."
                     DispatchQueue.main.async { self.showEmptyStateView(with: message, in: self.view) }
@@ -111,5 +121,12 @@ extension FollowerListVC: UICollectionViewDelegate {
             page += 1
             getFollowers(username: username, page: page)
         }
+    }
+}
+
+
+extension FollowerListVC: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        print("updateSearchResults extension called")
     }
 }
