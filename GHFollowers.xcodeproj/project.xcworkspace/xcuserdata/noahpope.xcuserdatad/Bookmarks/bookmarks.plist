@@ -116,13 +116,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>56</string>
+							<string>57</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>55</string>
+							<string>56</string>
 							<key>Timestamp</key>
-							<string>739743247.7386661</string>
+							<string>739745469.688068</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -163,13 +163,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>132</string>
+							<string>147</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>131</string>
+							<string>146</string>
 							<key>Timestamp</key>
-							<string>739744420.221037</string>
+							<string>739746396.806198</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -188,13 +188,13 @@
 						<string>        guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
 </string>
 						<key>leading</key>
-						<string>extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
+						<string>    
     func updateSearchResults(for searchController: UISearchController) {
 </string>
 						<key>trailing</key>
 						<string>        
+        isSearching = true
         filteredFollowers = followers.filter { $0.login.lowercased().contains(filter.lowercased()) }
-        updateData(on: filteredFollowers)
 </string>
 					</dict>
 					<key>title</key>

@@ -107,6 +107,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  * hide/reveal right pane = cmd + shift + 0
  * hide/reveal preview window = cmd + shift + enter
  
+ * human interface guidelines: https://developer.apple.com/design/human-interface-guidelines
+ 
  --------------------------
  XXXXXXXXXXXXXXXXXXXXXXXX
  XXXXXXXXXXXXXXXXXXXXXXXX
