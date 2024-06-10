@@ -163,13 +163,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>147</string>
+							<string>151</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>146</string>
+							<string>150</string>
 							<key>Timestamp</key>
-							<string>739746396.806198</string>
+							<string>739747777.017665</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -199,6 +199,54 @@
 					</dict>
 					<key>title</key>
 					<string>using commas in vars (both must pass)</string>
+					<key>type</key>
+					<string>bookmark</string>
+				</dict>
+				<dict>
+					<key>destination</key>
+					<dict>
+						<key>location-parameters</key>
+						<dict>
+							<key>EndingColumnNumber</key>
+							<string>5</string>
+							<key>EndingLineNumber</key>
+							<string>18</string>
+							<key>StartingColumnNumber</key>
+							<string>3</string>
+							<key>StartingLineNumber</key>
+							<string>16</string>
+							<key>Timestamp</key>
+							<string>739748181.141593</string>
+						</dict>
+						<key>rebasable-url</key>
+						<dict>
+							<key>base</key>
+							<string>workspace</string>
+							<key>payload</key>
+							<dict>
+								<key>relative-path</key>
+								<string>GHFollowers/Models/Follower.swift</string>
+							</dict>
+						</dict>
+					</dict>
+					<key>text-context</key>
+					<dict>
+						<key>focused</key>
+						<string> func hash(into hasher: inout Hasher) {
+        hasher.combine(login)
+    }</string>
+						<key>leading</key>
+						<string>    
+    //this hasher turns the login into a UUID for the diffable datasource
+   </string>
+						<key>trailing</key>
+						<string>
+}
+
+</string>
+					</dict>
+					<key>title</key>
+					<string>diffable datasource hasher / login gets turned into UUID </string>
 					<key>type</key>
 					<string>bookmark</string>
 				</dict>

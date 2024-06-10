@@ -12,6 +12,8 @@ struct Follower: Codable, Hashable {
     var login: String
     var avatarUrl: String
     
+    
+    //this hasher turns the login into a UUID for the diffable datasource
     func hash(into hasher: inout Hasher) {
         hasher.combine(login)
     }
