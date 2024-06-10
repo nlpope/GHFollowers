@@ -112,9 +112,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  --------------------------
  XXXXXXXXXXXXXXXXXXXXXXXX
  XXXXXXXXXXXXXXXXXXXXXXXX
- --------------------------
- //fill in new numbers for new notes in FollowerInfoVC
- 
+ -------------------------- 
  PROJECT NOTES:
  * MVC = "Does my View Controller need to know about this?"
  >  basically if you see NO GREEN (ref's to the VC) in the func, it can be refactored out of the VC to another file.

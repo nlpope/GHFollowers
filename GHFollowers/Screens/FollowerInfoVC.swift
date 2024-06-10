@@ -30,15 +30,17 @@ class FollowerInfoVC: UIViewController {
         
     }
     
-    //this doesn't need params b/c info isn't changing on the VC
-    //you only ever see one user w/out mulitple pages of info, unlike FollowerListVC > getFollowers(username:, page)
+    //see note 3 in app delegate
     func getFollowerInfo() {
         NetworkManager.shared.getFollowerInfo(for: username) { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .success(let user):
-                print(user.)
+                print(user)
+            case .failure(let error):
+                self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+                break
             }
         }
     }
