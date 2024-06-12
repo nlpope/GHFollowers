@@ -208,15 +208,15 @@
 						<key>location-parameters</key>
 						<dict>
 							<key>EndingColumnNumber</key>
-							<string>5</string>
+							<string>0</string>
 							<key>EndingLineNumber</key>
 							<string>18</string>
 							<key>StartingColumnNumber</key>
-							<string>3</string>
+							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>16</string>
+							<string>17</string>
 							<key>Timestamp</key>
-							<string>739748181.141593</string>
+							<string>739900011.918251</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -232,17 +232,16 @@
 					<key>text-context</key>
 					<dict>
 						<key>focused</key>
-						<string> func hash(into hasher: inout Hasher) {
-        hasher.combine(login)
-    }</string>
+						<string>    func hash(into hasher: inout Hasher) {
+</string>
 						<key>leading</key>
 						<string>    
     //this hasher turns the login into a UUID for the diffable datasource
-   </string>
+</string>
 						<key>trailing</key>
-						<string>
+						<string>        hasher.combine(login)
+    }
 }
-
 </string>
 					</dict>
 					<key>title</key>

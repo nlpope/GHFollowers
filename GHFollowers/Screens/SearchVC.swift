@@ -32,18 +32,12 @@ class SearchVC: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    
     //MARK: FUNCTIONS
-    
-    func createDismissKeyboardTapGesture() {
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
-        view.addGestureRecognizer(tap)
-    }
-    
-    
     @objc func pushFollowerListVC() {
         
         guard isUsernameEntered else {
-            presentGFAlertOnMainThread(title: "Empty username", message: "Please enter a username. We need to know who to look for 😀.", buttonTitle: "Ok")
+            presentGFAlertOnMainThread(alertTitle: "Empty username", message: "Please enter a username. We need to know who to look for 😀.", buttonTitle: "Ok")
             return
         }
         
@@ -92,6 +86,12 @@ class SearchVC: UIViewController {
             callToActionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             callToActionButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+    
+    
+    func createDismissKeyboardTapGesture() {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(tap)
     }
 }
 

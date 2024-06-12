@@ -4,6 +4,7 @@
 //
 //  Created by Noah Pope on 5/31/24.
 //  swift file not cocoa
+//  OG name = User
 
 import Foundation
 

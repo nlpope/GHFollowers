@@ -1,5 +1,5 @@
 //
-//  GFAlertVC.swift
+//  GFAlertChildVC.swift
 //  GHFollowers
 //
 //  Created by Noah Pope on 5/28/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GFAlertVC: UIViewController {
+class GFAlertChildVC: UIViewController {
     
     
     let containerView = GFAlertContainerView()
@@ -21,9 +21,9 @@ class GFAlertVC: UIViewController {
     
     let padding: CGFloat = 20
     
-    init(title: String, message: String, buttonTitle: String) {
+    init(alertTitle: String, message: String, buttonTitle: String) {
         super.init(nibName: nil, bundle: nil)
-        self.alertTitle  = title
+        self.alertTitle  = alertTitle
         self.message     = message
         self.buttonTitle = buttonTitle
     }
