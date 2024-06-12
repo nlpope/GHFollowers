@@ -33,6 +33,7 @@ class GFUserInfoHeaderChildVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
+        layoutUI()
     }
     
     
@@ -42,6 +43,11 @@ class GFUserInfoHeaderChildVC: UIViewController {
         for subview in subviews {
             view.addSubview(subview)
         }
+        
+    }
+    
+    
+    func layoutUI() {
         
     }
     
