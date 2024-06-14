@@ -48,7 +48,7 @@ class GFUserInfoHeaderChildVC: UIViewController {
     
     
     func layoutUI() {
-        
+        //configure the layout here
     }
     
 
