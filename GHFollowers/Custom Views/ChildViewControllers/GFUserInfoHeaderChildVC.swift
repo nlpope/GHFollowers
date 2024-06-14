@@ -40,11 +40,14 @@ class GFUserInfoHeaderChildVC: UIViewController {
     
     func configureUIElements() {
         avatarImageView.downloadImage(from: follower.avatarUrl)
-        usernameLabel.text      = follower.login
-        nameLabel.text          = follower.name ?? ""
-        locationLabel.text      = follower.location ?? "No Location"
-        bioLabel.text           = follower.bio ?? ""
-        bioLabel.numberOfLines  = 3
+        usernameLabel.text          = follower.login
+        nameLabel.text              = follower.name ?? ""
+        locationLabel.text          = follower.location ?? "No Location"
+        bioLabel.text               = follower.bio ?? ""
+        bioLabel.numberOfLines      = 3
+        
+        locationImageView.image     = UIImage(systemName: SFSymbols.location)
+        locationImageView.tintColor = .secondaryLabel
     }
     
     

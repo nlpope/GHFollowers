@@ -45,15 +45,6 @@ class FollowerListVC: UIViewController {
     }
     
     
-    func configureCollectionView() {
-        collectionView                  = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: view))
-        view.addSubview(collectionView)
-        collectionView.delegate         = self
-        collectionView.backgroundColor  = .systemBackground
-        collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
-    }
-    
-    
     func configureSearchController() {
         let mySearchController                                  = UISearchController()
         mySearchController.searchResultsUpdater                 = self
@@ -65,6 +56,15 @@ class FollowerListVC: UIViewController {
 
     }
     
+    
+    func configureCollectionView() {
+        collectionView                  = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: view))
+        view.addSubview(collectionView)
+        collectionView.delegate         = self
+        collectionView.backgroundColor  = .systemBackground
+        collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
+    }
+   
     
     func getFollowers(username: String, page: Int) {
         showLoadingView()
