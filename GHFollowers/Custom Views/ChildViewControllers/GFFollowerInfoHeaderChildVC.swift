@@ -1,5 +1,5 @@
 //
-//  GFUserInfoHeaderChildVC.swift
+//  GFFollowerInfoHeaderChildVC.swift
 //  GHFollowers
 //
 //  Created by Noah Pope on 6/12/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GFUserInfoHeaderChildVC: UIViewController {
+class GFFollowerInfoHeaderChildVC: UIViewController {
     
     let avatarImageView     = GFAvatarImageView(frame: .zero)
     let usernameLabel       = GFTitleLabel(textAlignment: .left, fontSize: 34)
@@ -16,10 +16,10 @@ class GFUserInfoHeaderChildVC: UIViewController {
     let locationLabel       = GFSecondaryTitleLabel(fontSize: 18)
     let bioLabel            = GFBodyLabel(textAlignment: .left)
         
-    var follower: Follower!
+    var follower: ExpandedFollower!
     
     
-    init(follower: Follower) {
+    init(follower: ExpandedFollower) {
         super.init(nibName: nil, bundle: nil)
         self.follower = follower
     }
