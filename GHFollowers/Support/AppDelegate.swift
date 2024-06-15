@@ -145,6 +145,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  * FollowerInfoVC
     3. this doesn't need params b/c info isn't changing on the VC
     .. you only ever see one user w/out mulitple pages of info, unlike FollowerListVC > getFollowers(username:, page)
+ 
+ * FollowerInfoVC
+    4. leadingAnchor/trailingAnchor constants padding were OG handled in GFFollowerInfoHeaderChildVC (contained within the parent view)
+    > but this has since been refactored so that all the padding for the leading and trailing edges of the view were handled in the parent VC
+    > for this we were able to use a for loop for the similar NSLayoutConstraints
  --------------------------
  
  */
