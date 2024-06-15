@@ -1,13 +1,15 @@
 //
-//  ExpandedFollower.swift
+//  User.swift
 //  GHFollowers
 //
 //  Created by Noah Pope on 5/31/24.
-//  OG name = User
+//
+//  User = what's focused on / expanded once a little follower is clicked
+
 
 import Foundation
 
-struct ExpandedFollower: Codable {
+struct User: Codable {
     let login: String
     let avatarUrl: String
     var name: String?

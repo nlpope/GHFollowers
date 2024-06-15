@@ -142,12 +142,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   > sltn: I never set the delegate in the configureCollectionView func
   > thanks to Radames Vega-Alfaro's comment on pagination example vid to use Xcode > Developer Tool > FileMerge to compare differences
  
- * FollowerInfoVC
+ * UserInfoVC
     3. this doesn't need params b/c info isn't changing on the VC
     .. you only ever see one user w/out mulitple pages of info, unlike FollowerListVC > getFollowers(username:, page)
  
  * FollowerInfoVC
-    4. leadingAnchor/trailingAnchor constants padding were OG handled in GFFollowerInfoHeaderChildVC (contained within the parent view)
+    4. leadingAnchor/trailingAnchor constants padding were OG handled in GFUserInfoHeaderChildVC (contained within the parent view)
     > but this has since been refactored so that all the padding for the leading and trailing edges of the view were handled in the parent VC
     > for this we were able to use a for loop for the similar NSLayoutConstraints
  

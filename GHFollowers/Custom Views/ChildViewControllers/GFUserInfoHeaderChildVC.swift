@@ -1,5 +1,5 @@
 //
-//  GFFollowerInfoHeaderChildVC.swift
+//  GFUserInfoHeaderChildVC.swift
 //  GHFollowers
 //
 //  Created by Noah Pope on 6/12/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GFFollowerInfoHeaderChildVC: UIViewController {
+class GFUserInfoHeaderChildVC: UIViewController {
     
     let avatarImageView     = GFAvatarImageView(frame: .zero)
     let usernameLabel       = GFTitleLabel(textAlignment: .left, fontSize: 34)
@@ -16,12 +16,12 @@ class GFFollowerInfoHeaderChildVC: UIViewController {
     let locationLabel       = GFSecondaryTitleLabel(fontSize: 18)
     let bioLabel            = GFBodyLabel(textAlignment: .left)
         
-    var follower: ExpandedFollower!
+    var user: User!
     
     
-    init(follower: ExpandedFollower) {
+    init(follower: User) {
         super.init(nibName: nil, bundle: nil)
-        self.follower = follower
+        self.user = follower
     }
     
     
@@ -91,11 +91,11 @@ class GFFollowerInfoHeaderChildVC: UIViewController {
     
     
     func configureUIElements() {
-        avatarImageView.downloadImage(from: follower.avatarUrl)
-        usernameLabel.text          = follower.login
-        nameLabel.text              = follower.name ?? ""
-        locationLabel.text          = follower.location ?? "No Location"
-        bioLabel.text               = follower.bio ?? ""
+        avatarImageView.downloadImage(from: user.avatarUrl)
+        usernameLabel.text          = user.login
+        nameLabel.text              = user.name ?? ""
+        locationLabel.text          = user.location ?? "No Location"
+        bioLabel.text               = user.bio ?? ""
         bioLabel.numberOfLines      = 3
         
         locationImageView.image     = UIImage(systemName: SFSymbols.location)

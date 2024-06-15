@@ -1,5 +1,5 @@
 //
-//  FollowerInfoVC.swift
+//  UserInfoVC.swift
 //  GHFollowers
 //
 //  Created by Noah Pope on 6/10/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FollowerInfoVC: UIViewController {
+class UserInfoVC: UIViewController {
     
     let headerView          = UIView()
     let itemViewOne         = UIView()
@@ -74,7 +74,7 @@ class FollowerInfoVC: UIViewController {
             
             switch result {
             case .success(let follower):
-                DispatchQueue.main.async { self.add(childVC: GFFollowerInfoHeaderChildVC(follower: follower), to: self.headerView) }
+                DispatchQueue.main.async { self.add(childVC: GFUserInfoHeaderChildVC(follower: follower), to: self.headerView) }
             case .failure(let error):
                 self.presentGFAlertOnMainThread(alertTitle: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
                 break
