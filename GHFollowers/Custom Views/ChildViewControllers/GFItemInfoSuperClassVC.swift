@@ -18,12 +18,22 @@ class GFItemInfoSuperClassVC: UIViewController {
         super.viewDidLoad()
         configureBackgroundView()
         layoutUI()
+        configureStackView()
     }
     
-    //this is the rounded, slighty gray card the GFItemInfoViews are put into
+    //this is the rounded, slighty gray background card the GFItemInfoViews are put into
     private func configureBackgroundView() {
         view.layer.cornerRadius = 18
         view.backgroundColor    = .secondarySystemBackground
+    }
+    
+    
+    private func configureStackView() {
+        stackView.axis          = .horizontal
+        stackView.distribution  = .equalSpacing
+        
+        stackView.addArrangedSubview(itemInfoViewOne)
+        stackView.addArrangedSubview(itemInfoViewTwo)
     }
     
     
