@@ -73,8 +73,8 @@ class UserInfoVC: UIViewController {
             guard let self = self else { return }
             
             switch result {
-            case .success(let follower):
-                DispatchQueue.main.async { self.add(childVC: GFUserInfoHeaderChildVC(follower: follower), to: self.headerView) }
+            case .success(let user):
+                DispatchQueue.main.async { self.add(childVC: GFUserInfoHeaderChildVC(user: user), to: self.headerView) }
             case .failure(let error):
                 self.presentGFAlertOnMainThread(alertTitle: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
                 break

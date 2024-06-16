@@ -19,9 +19,9 @@ class GFUserInfoHeaderChildVC: UIViewController {
     var user: User!
     
     
-    init(follower: User) {
+    init(user: User) {
         super.init(nibName: nil, bundle: nil)
-        self.user = follower
+        self.user = user
     }
     
     
