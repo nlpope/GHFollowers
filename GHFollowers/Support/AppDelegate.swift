@@ -154,6 +154,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  * GFItemInfoView
     5. .scaleApectFill aligns image views that are shaped differently
     > e.g. hearts & folders won't be misaligned
+ 
+ * GFItemInfoSuperVC
+    6. this generic SUPER CLASS puts both the UIViews & UIbutton together
+    > it does all the HEAVY LIFTING for the more specific GFRepo/FollowerItemChildVCs
+    > making the setup short for both SUBCLASSES (above)
+    > ... and even shorter in the UserInfoVC it's used in
  --------------------------
  
  */

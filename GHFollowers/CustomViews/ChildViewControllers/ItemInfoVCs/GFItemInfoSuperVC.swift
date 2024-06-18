@@ -7,8 +7,8 @@
 
 import UIKit
 
-//VC for GFInfoItemView
 //super class for GFRepoItemChildVC & GFFollowerItemChildVC
+//see note 6 in app delegate
 class GFItemInfoSuperVC: UIViewController {
     
     let stackView       = UIStackView()
@@ -70,7 +70,7 @@ class GFItemInfoSuperVC: UIViewController {
             
             actionButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -padding),
             actionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
-            actionButton.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -padding),
+            actionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             actionButton.heightAnchor.constraint(equalToConstant: 44)
         ])
     }
