@@ -55,7 +55,7 @@ class NetworkManager {
     
     
     //OG name = getUserInfo
-    func getFollowerInfo(for username: String, completed: @escaping(Result<User, GFError>) -> Void) {
+    func getUserInfo(for username: String, completed: @escaping(Result<User, GFError>) -> Void) {
         let endpoint = baseURL + "\(username)"
         
         guard let url = URL(string: endpoint) else {
@@ -84,8 +84,8 @@ class NetworkManager {
             do {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let follower = try decoder.decode(User.self, from: data)
-                completed(.success(follower))
+                let user = try decoder.decode(User.self, from: data)
+                completed(.success(user))
             } catch {
                 completed(.failure(.invalidData))
             }

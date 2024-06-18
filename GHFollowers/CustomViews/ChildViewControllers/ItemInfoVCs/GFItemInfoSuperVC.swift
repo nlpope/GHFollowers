@@ -1,5 +1,5 @@
 //
-//  GFItemInfoVC.swift
+//  GFItemInfoSuperVC.swift
 //  GHFollowers
 //
 //  Created by Noah Pope on 6/15/24.
@@ -8,8 +8,8 @@
 import UIKit
 
 //VC for GFInfoItemView
-//super class for GFRepoItemVC
-class GFItemInfoVC: UIViewController {
+//super class for GFRepoItemChildVC & GFFollowerItemChildVC
+class GFItemInfoSuperVC: UIViewController {
     
     let stackView       = UIStackView()
     let itemInfoViewOne = GFItemInfoView()

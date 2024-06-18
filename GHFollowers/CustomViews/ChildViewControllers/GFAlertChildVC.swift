@@ -68,6 +68,20 @@ class GFAlertChildVC: UIViewController {
     }
     
     
+    func configureMessageLabel() {
+        containerView.addSubview(messageLabel)
+        messageLabel.text          = message ?? "Unable to complete request"
+        messageLabel.numberOfLines = 4
+        
+        NSLayoutConstraint.activate([
+            messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+            messageLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
+            messageLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
+            messageLabel.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -12)
+        ])
+    }
+    
+    
     func configureActionButton() {
         containerView.addSubview(actionButton)
         actionButton.setTitle(buttonTitle, for: .normal)
@@ -79,20 +93,6 @@ class GFAlertChildVC: UIViewController {
             actionButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
             actionButton.heightAnchor.constraint(equalToConstant: 44)
             
-        ])
-    }
-    
-    
-    func configureMessageLabel() {
-        containerView.addSubview(messageLabel)
-        messageLabel.text          = message ?? "Unable to complete request"
-        messageLabel.numberOfLines = 4
-        
-        NSLayoutConstraint.activate([
-            messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
-            messageLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
-            messageLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
-            messageLabel.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -12)
         ])
     }
     

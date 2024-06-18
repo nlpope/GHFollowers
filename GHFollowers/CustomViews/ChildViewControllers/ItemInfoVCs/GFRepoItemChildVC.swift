@@ -1,5 +1,5 @@
 //
-//  GFRepoItemVC.swift
+//  GFRepoItemChildVC.swift
 //  GHFollowers
 //
 //  Created by Noah Pope on 6/15/24.
@@ -7,8 +7,9 @@
 
 import UIKit
 
-class GFRepoItemVC: GFItemInfoVC {
+class GFRepoItemChildVC: GFItemInfoSuperVC {
     
+    //though init(user:) is not here, it is still necessary for the SuperVC
     override func viewDidLoad() {
         super.viewDidLoad()
         configureItems()

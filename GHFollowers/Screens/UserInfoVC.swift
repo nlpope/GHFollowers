@@ -9,10 +9,10 @@ import UIKit
 
 class UserInfoVC: UIViewController {
     
-    let headerView          = UIView()
-    let itemViewOne         = UIView()
-    let itemViewTwo         = UIView()
-    var itemViews: [UIView] = []
+    let headerView               = UIView()
+    let itemViewOneContainer     = UIView()
+    let itemViewTwoContainer     = UIView()
+    var itemViews: [UIView]      = []
     
     var username: String!
 
@@ -21,7 +21,7 @@ class UserInfoVC: UIViewController {
         super.viewDidLoad()
         configureVC()
         layoutUI()
-        getFollowerInfo()
+        getUserInfo()
     }
     
     
@@ -35,7 +35,7 @@ class UserInfoVC: UIViewController {
     func layoutUI() {
         let padding: CGFloat = 20
         let itemHeight: CGFloat = 140
-        itemViews = [headerView, itemViewOne, itemViewTwo]
+        itemViews = [headerView, itemViewOneContainer, itemViewTwoContainer]
         
         for itemView in itemViews {
             view.addSubview(itemView)
@@ -47,19 +47,19 @@ class UserInfoVC: UIViewController {
             ])
         }
         
-        itemViewOne.backgroundColor = .systemPink
-        itemViewTwo.backgroundColor = .systemBlue
+//        itemViewOneContainer.backgroundColor = .systemPink
+//        itemViewTwoContainer.backgroundColor = .systemBlue
             
         NSLayoutConstraint.activate([
             //see note 4 in app delegate
             headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             headerView.heightAnchor.constraint(equalToConstant: 180),
             
-            itemViewOne.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: padding),
-            itemViewOne.heightAnchor.constraint(equalToConstant: itemHeight),
+            itemViewOneContainer.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: padding),
+            itemViewOneContainer.heightAnchor.constraint(equalToConstant: itemHeight),
             
-            itemViewTwo.topAnchor.constraint(equalTo: itemViewOne.bottomAnchor, constant: padding),
-            itemViewTwo.heightAnchor.constraint(equalToConstant: itemHeight)
+            itemViewTwoContainer.topAnchor.constraint(equalTo: itemViewOneContainer.bottomAnchor, constant: padding),
+            itemViewTwoContainer.heightAnchor.constraint(equalToConstant: itemHeight)
             
             
         ])
@@ -68,13 +68,18 @@ class UserInfoVC: UIViewController {
     
     
     //see note 3 in app delegate
-    func getFollowerInfo() {
-        NetworkManager.shared.getFollowerInfo(for: username) { [weak self] result in
+    func getUserInfo() {
+        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .success(let user):
-                DispatchQueue.main.async { self.add(childVC: GFUserInfoHeaderChildVC(user: user), to: self.headerView) }
+                DispatchQueue.main.async {
+                    self.add(childVC: GFUserInfoHeaderChildVC(user: user), toContainer: self.headerView)
+                    self.add(childVC: GFRepoItemChildVC(user: user), toContainer: self.itemViewOneContainer)
+                    self.add(childVC: GFFollowerItemChildVC(user: user), toContainer: self.itemViewTwoContainer)
+                    
+                }
             case .failure(let error):
                 self.presentGFAlertOnMainThread(alertTitle: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
                 break
@@ -83,7 +88,7 @@ class UserInfoVC: UIViewController {
     }
     
     
-    func add(childVC: UIViewController, to containerView: UIView) {
+    func add(childVC: UIViewController, toContainer containerView: UIView) {
         addChild(childVC)
         containerView.addSubview(childVC.view)
         childVC.view.frame = containerView.bounds
