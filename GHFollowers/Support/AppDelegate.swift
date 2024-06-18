@@ -159,6 +159,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     6. this generic SUPER CLASS puts both the UIViews & UIbutton together
     > it does all the HEAVY LIFTING for the more specific GFRepo/FollowerItemChildVCs
     > making the setup short for both SUBCLASSES (above)
+    >> all you have to call is the "set( )" func for each childVC & the button (genericVC [collects UIViews & UIButton w set( ) funcs] > specificVC > finalChildVC)
     > ... and even shorter in the UserInfoVC it's used in
  --------------------------
  
