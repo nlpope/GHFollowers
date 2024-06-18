@@ -6,10 +6,11 @@
 //  OG name = UserInfoVC
 
 import UIKit
+import SafariServices
 
 protocol UserInfoVCDelegate: AnyObject {
-    func didTapGitHubProfile()
-    func didTapGitFollowers()
+    func didTapGitHubProfile(for user: User)
+    func didTapGitFollowers(for user: User)
 }
 
 class UserInfoVC: UIViewController {
@@ -35,6 +36,46 @@ class UserInfoVC: UIViewController {
         view.backgroundColor = .systemBackground
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
         navigationItem.rightBarButtonItem = doneButton
+    }
+    
+    
+    //see note 3 in app delegate
+    func getUserInfo() {
+        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
+            guard let self = self else { return }
+             
+            switch result {
+            case .success(let user):
+                DispatchQueue.main.async { self.configureUIElements(with: user) }
+                
+            case .failure(let error):
+                self.presentGFAlertOnMainThread(alertTitle: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+                break
+            }
+        }
+    }
+    
+    
+    func configureUIElements(with user: User) {
+        //see note 7 in app delegate
+        let repoItemChildVC             = GFRepoItemChildVC(user: user)
+        repoItemChildVC.delegate        = self
+        
+        let followerItemChildVC         = GFFollowerItemChildVC(user: user)
+        followerItemChildVC.delegate    = self
+        
+        self.add(childVC: repoItemChildVC, toContainer: self.itemViewOneContainer)
+        self.add(childVC: followerItemChildVC, toContainer: self.itemViewTwoContainer)
+        self.add(childVC: GFUserInfoHeaderChildVC(user: user), toContainer: self.headerView)
+        self.dateLabel.text = "GitHub since \(user.createdAt.convertToDisplayFormat())"
+    }
+    
+    
+    func add(childVC: UIViewController, toContainer containerView: UIView) {
+        addChild(childVC)
+        containerView.addSubview(childVC.view)
+        childVC.view.frame = containerView.bounds
+        childVC.didMove(toParent: self)
     }
     
     
@@ -74,46 +115,6 @@ class UserInfoVC: UIViewController {
         ])
         
     }
-    
-    
-    //see note 3 in app delegate
-    func getUserInfo() {
-        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
-            guard let self = self else { return }
-            
-            switch result {
-            case .success(let user):
-                DispatchQueue.main.async { self.configureUIElements(with: user) }
-                
-            case .failure(let error):
-                self.presentGFAlertOnMainThread(alertTitle: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
-                break
-            }
-        }
-    }
-    
-    
-    func configureUIElements(with user: User) {
-        //see note 7 in app delegate
-        let repoItemChildVC             = GFRepoItemChildVC(user: user)
-        repoItemChildVC.delegate        = self
-        
-        let followerItemChildVC         = GFFollowerItemChildVC(user: user)
-        followerItemChildVC.delegate    = self
-        
-        self.add(childVC: GFRepoItemChildVC(user: user), toContainer: self.itemViewOneContainer)
-        self.add(childVC: GFFollowerItemChildVC(user: user), toContainer: self.itemViewTwoContainer)
-        self.add(childVC: GFUserInfoHeaderChildVC(user: user), toContainer: self.headerView)
-        self.dateLabel.text = "GitHub since \(user.createdAt.convertToDisplayFormat())"
-    }
-    
-    
-    func add(childVC: UIViewController, toContainer containerView: UIView) {
-        addChild(childVC)
-        containerView.addSubview(childVC.view)
-        childVC.view.frame = containerView.bounds
-        childVC.didMove(toParent: self)
-    }
 
     
     @objc func dismissVC() {
@@ -123,13 +124,20 @@ class UserInfoVC: UIViewController {
 }
 
 
-//MARK: USERINFO DELEGATE EXTENSION
+//MARK: USERINFOVC DELEGATE EXTENSION
 extension UserInfoVC: UserInfoVCDelegate {
-    func didTapGitHubProfile() {
-        // show safari view controller
+    func didTapGitHubProfile(for user: User) {
+        guard let url = URL(string: user.htmlUrl) else {
+            presentGFAlertOnMainThread(alertTitle: "Invalid URL", message: "The url attached to this user is invalid.", buttonTitle: "Ok")
+            return
+        }
+        
+        let safariVC                        = SFSafariViewController(url: url)
+        safariVC.preferredControlTintColor  = .systemGreen
+        present(safariVC, animated: true)
     }
     
-    func didTapGitFollowers() {
+    func didTapGitFollowers(for user: User) {
         // dismissvc
         // tell follower list screen for new user
     }

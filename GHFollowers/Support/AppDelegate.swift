@@ -167,7 +167,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  * UserInfoVC
     7. refactored this so the network call's success reads simpler / cleaner
     > also, we needed access to the '.delegate' property after initializing the user
-    >> this is not cleanly / done in the network call, so it's another reason it was refactored out into its own func. 
+    >> this is not cleanly / done in the network call, so it's another reason it was refactored out into its own func.
+    >> also for this reason, we no longer need to initialize the GFRepo/FollowerItemChildVC subclasses in the 'self.add' method
  --------------------------
  
  */

@@ -36,6 +36,7 @@ class GFItemInfoSuperVC: UIViewController {
         configureBackgroundView()
         layoutUI()
         configureStackView()
+        configureActionButton()
     }
     
     //this is the rounded, slighty gray background card the GFItemInfoViews are put into
@@ -52,6 +53,15 @@ class GFItemInfoSuperVC: UIViewController {
         stackView.addArrangedSubview(itemInfoViewOne)
         stackView.addArrangedSubview(itemInfoViewTwo)
     }
+    
+    
+    private func configureActionButton() {
+        actionButton.addTarget(self, action: #selector(actionButtonTapped), for: .touchUpInside)
+    }
+    
+    
+    //nothing in here - func to be overridden in subclasses
+    @objc func actionButtonTapped() {}
     
     
     private func layoutUI() {
