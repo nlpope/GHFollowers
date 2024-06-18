@@ -113,7 +113,7 @@ class FollowerListVC: UIViewController {
 }
 
 
-//MARK: COLLECTIONVIEW EXTENSION
+//MARK: COLLECTIONVIEW DELEGATE EXTENSION
 extension FollowerListVC: UICollectionViewDelegate {
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         let offsetY         = scrollView.contentOffset.y

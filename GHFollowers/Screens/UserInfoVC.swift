@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol UserInfoVCDelegate: AnyObject {
+    func didTapGitHubProfile()
+    func didTapGitFollowers()
+}
+
 class UserInfoVC: UIViewController {
     
     let headerView               = UIView()
@@ -78,18 +83,28 @@ class UserInfoVC: UIViewController {
             
             switch result {
             case .success(let user):
-                DispatchQueue.main.async {
-                    self.add(childVC: GFUserInfoHeaderChildVC(user: user), toContainer: self.headerView)
-                    self.add(childVC: GFRepoItemChildVC(user: user), toContainer: self.itemViewOneContainer)
-                    self.add(childVC: GFFollowerItemChildVC(user: user), toContainer: self.itemViewTwoContainer)
-                    self.dateLabel.text = user.createdAt
-                    
-                }
+                DispatchQueue.main.async { self.configureUIElements(with: user) }
+                
             case .failure(let error):
                 self.presentGFAlertOnMainThread(alertTitle: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
                 break
             }
         }
+    }
+    
+    
+    func configureUIElements(with user: User) {
+        //see note 7 in app delegate
+        let repoItemChildVC             = GFRepoItemChildVC(user: user)
+        repoItemChildVC.delegate        = self
+        
+        let followerItemChildVC         = GFFollowerItemChildVC(user: user)
+        followerItemChildVC.delegate    = self
+        
+        self.add(childVC: GFRepoItemChildVC(user: user), toContainer: self.itemViewOneContainer)
+        self.add(childVC: GFFollowerItemChildVC(user: user), toContainer: self.itemViewTwoContainer)
+        self.add(childVC: GFUserInfoHeaderChildVC(user: user), toContainer: self.headerView)
+        self.dateLabel.text = "GitHub since \(user.createdAt.convertToDisplayFormat())"
     }
     
     
@@ -105,4 +120,19 @@ class UserInfoVC: UIViewController {
         dismiss(animated: true)
     }
 
+}
+
+
+//MARK: USERINFO DELEGATE EXTENSION
+extension UserInfoVC: UserInfoVCDelegate {
+    func didTapGitHubProfile() {
+        // show safari view controller
+    }
+    
+    func didTapGitFollowers() {
+        // dismissvc
+        // tell follower list screen for new user
+    }
+    
+    
 }

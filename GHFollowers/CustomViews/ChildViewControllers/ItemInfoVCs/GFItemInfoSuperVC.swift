@@ -17,6 +17,7 @@ class GFItemInfoSuperVC: UIViewController {
     let actionButton    = GFButton()
     
     var user: User!
+    var delegate: UserInfoVCDelegate!
     
     
     init(user: User) {

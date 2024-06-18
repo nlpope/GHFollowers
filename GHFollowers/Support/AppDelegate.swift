@@ -82,6 +82,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 //MARK: NOTES SECTION
 /**
+ swift @ version: 5.10.1
+ xcode @ version: 15.4
  --------------------------
  SHORTCUTS:
  * bookmark goals by right clicking a line
@@ -161,6 +163,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     > making the setup short for both SUBCLASSES (above)
     >> all you have to call is the "set( )" func for each childVC & the button (genericVC [collects UIViews & UIButton w set( ) funcs] > specificVC > finalChildVC)
     > ... and even shorter in the UserInfoVC it's used in
+ 
+ * UserInfoVC
+    7. refactored this so the network call's success reads simpler / cleaner
+    > also, we needed access to the '.delegate' property after initializing the user
+    >> this is not cleanly / done in the network call, so it's another reason it was refactored out into its own func. 
  --------------------------
  
  */
