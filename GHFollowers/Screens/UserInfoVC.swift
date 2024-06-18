@@ -12,6 +12,7 @@ class UserInfoVC: UIViewController {
     let headerView               = UIView()
     let itemViewOneContainer     = UIView()
     let itemViewTwoContainer     = UIView()
+    let dateLabel                = GFBodyLabel(textAlignment: .center)
     var itemViews: [UIView]      = []
     
     var username: String!
@@ -35,7 +36,7 @@ class UserInfoVC: UIViewController {
     func layoutUI() {
         let padding: CGFloat = 20
         let itemHeight: CGFloat = 140
-        itemViews = [headerView, itemViewOneContainer, itemViewTwoContainer]
+        itemViews = [headerView, itemViewOneContainer, itemViewTwoContainer, dateLabel]
         
         for itemView in itemViews {
             view.addSubview(itemView)
@@ -59,7 +60,10 @@ class UserInfoVC: UIViewController {
             itemViewOneContainer.heightAnchor.constraint(equalToConstant: itemHeight),
             
             itemViewTwoContainer.topAnchor.constraint(equalTo: itemViewOneContainer.bottomAnchor, constant: padding),
-            itemViewTwoContainer.heightAnchor.constraint(equalToConstant: itemHeight)
+            itemViewTwoContainer.heightAnchor.constraint(equalToConstant: itemHeight),
+            
+            dateLabel.topAnchor.constraint(equalTo: itemViewTwoContainer.bottomAnchor, constant: padding),
+            dateLabel.heightAnchor.constraint(equalToConstant: 18)
             
             
         ])
@@ -78,6 +82,7 @@ class UserInfoVC: UIViewController {
                     self.add(childVC: GFUserInfoHeaderChildVC(user: user), toContainer: self.headerView)
                     self.add(childVC: GFRepoItemChildVC(user: user), toContainer: self.itemViewOneContainer)
                     self.add(childVC: GFFollowerItemChildVC(user: user), toContainer: self.itemViewTwoContainer)
+                    self.dateLabel.text = user.createdAt
                     
                 }
             case .failure(let error):

@@ -5,7 +5,7 @@
 //  Created by Noah Pope on 6/17/24.
 //
 
-import Foundation
+import UIKit
 
 class GFFollowerItemChildVC: GFItemInfoSuperVC {
     
