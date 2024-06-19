@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol FollowerListVCDelegate: AnyObject {
+    func didRequestFollowers(for username: String)
+}
+
 class FollowerListVC: UIViewController {
     
     //for UICollectionViewDiffableDataSource
@@ -136,15 +140,15 @@ extension FollowerListVC: UICollectionViewDelegate {
         
         let destVC          = UserInfoVC()
         destVC.username     = follower.login
+        destVC.delegate     = self
         
         let navController   = UINavigationController(rootViewController: destVC)
-        
         present(navController, animated: true)
     }
 }
 
 
-//MARK: SEARCHBAR EXTENSION
+// MARK: SEARCHBAR METHODS
 extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -167,5 +171,21 @@ extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
             isSearching = false
             updateData(on: followers)
         }
+    }
+}
+
+
+// MARK: DELEGATE METHODS
+extension FollowerListVC: FollowerListVCDelegate {
+    
+    func didRequestFollowers(for username: String) {
+        self.username   = username
+        title           = username
+        page            = 1
+        followers.removeAll()
+        filteredFollowers.removeAll()
+        // auto scroll collection view back to top
+        collectionView.setContentOffset(.zero, animated: true)
+        getFollowers(username: username, page: page)
     }
 }

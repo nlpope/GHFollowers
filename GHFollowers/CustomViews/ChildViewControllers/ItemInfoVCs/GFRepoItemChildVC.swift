@@ -23,6 +23,6 @@ class GFRepoItemChildVC: GFItemInfoSuperVC {
     
     
     override func actionButtonTapped() {
-        delegate.didTapGitHubProfile(for: self.user)
+        delegate.didTapGitHubProfile(for: user)
     }
 }

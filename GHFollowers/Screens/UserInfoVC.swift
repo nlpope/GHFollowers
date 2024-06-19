@@ -6,7 +6,6 @@
 //  OG name = UserInfoVC
 
 import UIKit
-import SafariServices
 
 protocol UserInfoVCDelegate: AnyObject {
     func didTapGitHubProfile(for user: User)
@@ -22,6 +21,7 @@ class UserInfoVC: UIViewController {
     var itemViews: [UIView]      = []
     
     var username: String!
+    weak var delegate: FollowerListVCDelegate!
 
     
     override func viewDidLoad() {
@@ -124,7 +124,7 @@ class UserInfoVC: UIViewController {
 }
 
 
-//MARK: USERINFOVC DELEGATE EXTENSION
+// MARK: DELEGATE METHODS
 extension UserInfoVC: UserInfoVCDelegate {
     func didTapGitHubProfile(for user: User) {
         guard let url = URL(string: user.htmlUrl) else {
@@ -132,14 +132,17 @@ extension UserInfoVC: UserInfoVCDelegate {
             return
         }
         
-        let safariVC                        = SFSafariViewController(url: url)
-        safariVC.preferredControlTintColor  = .systemGreen
-        present(safariVC, animated: true)
+        presentSafariVC(with: url)        
     }
     
     func didTapGitFollowers(for user: User) {
-        // dismissvc
-        // tell follower list screen for new user
+        guard user.followers != 0 else { 
+            presentGFAlertOnMainThread(alertTitle: "No followers", message: "This user has no followers. What a shame 😞.", buttonTitle: "So sad")
+            return
+        }
+        
+        delegate.didRequestFollowers(for: user.login)
+        dismissVC()
     }
     
     
