@@ -185,6 +185,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  *  FavoritesListVC
     11. since the UI is communicating the success case (swipe to delete verification = row disapears), we can safely 'return' if no error takes place during deletion
     > it's not like we're going to put up a notif. onscreen telling the user the deletion was successful if the UI did that work for us
+ 
+ *  SearchVC
+    12. consider replacing below 3 lines (top constraint via Sean Allen's Constant+Utils method) with swift arcade's UIResponder+Utils
+    > link: https://www.youtube.com/watch?v=O4tP7egAV1I&ab_channel=SwiftArcade
     
  --------------------------
  
