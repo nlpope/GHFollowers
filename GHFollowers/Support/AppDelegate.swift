@@ -171,7 +171,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     >> also for this reason, we no longer need to initialize the GFRepo/FollowerItemChildVC subclasses in the 'self.add' method
  
  * PersistenceManager
-    8. enum is used instead of struct for one minor difference: you can initialize an empty struce; you cannot initialize an empty enum 
+    8. enum is used instead of struct for one minor difference: you can initialize an empty struce; you cannot initialize an empty enum
+    
+    9. see how the @escaping func returns either nil or a GFError (GFError?). Notice how the save(favorites: ) function we're calling at the end of the add or remove action type returns the same value.
+    > PROBLEM: I struggled getting the "user was successfully saved" message
+    >> sltn: I didn't wrap the save(favorites: retrievedFavorites) in a completed( )
+    >> i.e. I didn't send the result of my call to 'save(favorites: )' to the escaping completion handler
+    
  --------------------------
  
  */
