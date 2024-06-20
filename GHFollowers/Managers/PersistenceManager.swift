@@ -44,7 +44,6 @@ enum PersistenceManager {
                 
                 //see note 9 in app delegate
                 completed(save(favorites: retrievedFavorites))
-                save(favorites: retrievedFavorites)
                 
             case .failure(let error):
                 completed(error)
