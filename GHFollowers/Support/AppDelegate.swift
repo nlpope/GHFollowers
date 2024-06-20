@@ -181,6 +181,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  *  FavoriteCell & FavoritesListVC
     10. in FavoritesListVC we hard code the tableView to be 80 pts tall ...
     > so the imgView it will contain is set to 60 to leave space in btwn the img & cell
+ 
+ *  FavoritesListVC
+    11. since the UI is communicating the success case (swipe to delete verification = row disapears), we can safely 'return' if no error takes place during deletion
+    > it's not like we're going to put up a notif. onscreen telling the user the deletion was successful if the UI did that work for us
     
  --------------------------
  
