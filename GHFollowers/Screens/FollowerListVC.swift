@@ -133,7 +133,7 @@ class FollowerListVC: UIViewController {
                 PersistenceManager.updateWith(favorite: favorite, actionType: .add) { [weak self] error in
                     guard let self = self else { return }
                     guard let error = error else {
-                        self.presentGFAlertOnMainThread(alertTitle: "Success!", message: "You have successfully favorited this user 🥳.", buttonTitle: "Ok")
+                        self.presentGFAlertOnMainThread(alertTitle: "Success!", message: "You have successfully favorited this user 🥳.", buttonTitle: "Hooray!")
                         return
                     }
                     

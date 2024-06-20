@@ -8,8 +8,8 @@
 import UIKit
 
 class FollowerCell: UICollectionViewCell {
-    static let reuseID = "FollowerCell"
     
+    static let reuseID  = "FollowerCell"
     let avatarImageView = GFAvatarImageView(frame: .zero)
     let usernameLabel   = GFTitleLabel(textAlignment: .center, fontSize: 16)
     //give your label 4 extra points of padding below to account for letters that dip below baseline (y, j, g, etc)

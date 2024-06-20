@@ -177,6 +177,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     > PROBLEM: I struggled getting the "user was successfully saved" message
     >> sltn: I didn't wrap the save(favorites: retrievedFavorites) in a completed( )
     >> i.e. I didn't send the result of my call to 'save(favorites: )' to the escaping completion handler
+ 
+ *  FavoriteCell & FavoritesListVC
+    10. in FavoritesListVC we hard code the tableView to be 80 pts tall ...
+    > so the imgView it will contain is set to 60 to leave space in btwn the img & cell
     
  --------------------------
  
