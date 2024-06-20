@@ -105,10 +105,9 @@ extension FavoritesListVC: UITableViewDataSource, UITableViewDelegate {
         
         PersistenceManager.updateWith(favorite: favorite, actionType: .remove) { [weak self] error in
             guard let self = self else { return }
-            
-            // see note _ in app delegate
+            // see note 11 in app delegate
             guard let error = error else { return }
-            
+            self.presentGFAlertOnMainThread(alertTitle: "Unable to remove", message: error.rawValue, buttonTitle: "Ok")
         }
     }
 }
