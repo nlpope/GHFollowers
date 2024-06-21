@@ -123,11 +123,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  >  basically if you see NO GREEN TEXT (ref's to props created in the VC) in the func, it can be refactored to another file.
  >> the background color, border width, & corner radius of a container for an alert? No; Include in separate UIView
  >> NSLayoutContstraints for the container? Yes.
- >> if a refactored view was referenced in the OG func for it being in a VC and is throwing an error once you move it to your UIHelper struct (or anywhere), pass in the view using:
- func functionName(in view: UIView) ...
+ >> if a refactored view was referenced in the OG func and is throwing an error once you move it, pass in the view using:
+ func functionName(in view: UIView) { }
  
  * instead of MVC, MVVM, etc. start with:
- > Extensions
+ > Extensions - "...+Ext"
+ > Utilities (error msgs, constant enums, UIHelpers) - "...+Utils"
  > Custom Views
  > Screens (VCs)
  > Support (App/Scene Delegate, Assets, etc.)
