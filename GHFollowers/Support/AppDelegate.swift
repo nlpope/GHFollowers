@@ -129,9 +129,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  * instead of MVC, MVVM, etc. start with:
  > Extensions - "...+Ext"
  > Utilities (error msgs, constant enums, UIHelpers) - "...+Utils"
- > Custom Views
+ > Managers
+ > Models
+ > CustomViews
  > Screens (VCs)
- > Support (App/Scene Delegate, Assets, etc.)
+ > Support (App/Scene Delegate, Assets, the rest)
+ >> except info.plist, leave this outside/alone
  
  --------------------------
  XXXXXXXXXXXXXXXXXXXXXXXX
