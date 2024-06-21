@@ -19,7 +19,7 @@ class SearchVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //.systemBackgournd color accounts/adapts to light/dark modes
+        // .systemBackgournd color adapts to light/dark modes
         view.backgroundColor = .systemBackground
         configureLogoImageView()
         configureTextField()
@@ -56,13 +56,14 @@ class SearchVC: UIViewController {
         logoImageView.image = UIImage(named: "gh-logo")!
         
         // see note 12 in app delegate
+        // append - abandoning for simpler, swift arcade method
 //        let topConstraintConstant: CGFloat = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? 20 : 80
 //        
 //        logoImageViewTopConstraint = logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: topConstraintConstant)
 //        logoImageViewTopConstraint.isActive = true
         
         NSLayoutConstraint.activate([
-            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 120),
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoImageView.heightAnchor.constraint(equalToConstant: 200),
             logoImageView.widthAnchor.constraint(equalToConstant: 200)
