@@ -9,8 +9,8 @@ import UIKit
 
 class GFAlertContainerView: UIView {
         
-    //set up background, corner, border, autoresizing here (the UIView), then constraints in the view controller it's to be used in
-    //let containerView = UIView(): unnecessary, use the raw values like "layer" instead of prefacing with 'view' (UIViews have no access to 'view') - see GFButton
+    // set up background, corner, border, autoresizing here (the UIView), then constraints in the view controller it's to be used in
+    // let containerView = UIView(): unnecessary, use the raw values like "layer" instead of prefacing with 'view' (UIViews have no access to 'view') - see GFButton
     
     override init(frame: CGRect) {
         super.init(frame: frame)

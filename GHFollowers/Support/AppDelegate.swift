@@ -86,6 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  xcode @ version: 15.4
  --------------------------
  SHORTCUTS:
+ 
  * bookmark goals by right clicking a line
  > more preferably, type '#warning("message")' instead to have TO DO ITEMS UP FRONT
  * create new code snippets: right click + "create code snippet"
@@ -114,13 +115,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  --------------------------
  XXXXXXXXXXXXXXXXXXXXXXXX
  XXXXXXXXXXXXXXXXXXXXXXXX
- -------------------------- 
- PROJECT NOTES:
+ --------------------------
+ 
+ HELPFUL TIPS:
+ 
  * MVC = "Does my View Controller need to know about this?"
- >  basically if you see NO GREEN (ref's to the VC) in the func, it can be refactored out of the VC to another file.
+ >  basically if you see NO GREEN TEXT (ref's to props created in the VC) in the func, it can be refactored to another file.
  >> the background color, border width, & corner radius of a container for an alert? No; Include in separate UIView
  >> NSLayoutContstraints for the container? Yes.
- >> if a view was referenced in the OG func for it being in a VC and is throwing an error once you move it to your UIHelper struct, pass in the view using:
+ >> if a refactored view was referenced in the OG func for it being in a VC and is throwing an error once you move it to your UIHelper struct (or anywhere), pass in the view using:
  func functionName(in view: UIView) ...
  
  * instead of MVC, MVVM, etc. start with:
@@ -128,8 +131,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  > Custom Views
  > Screens (VCs)
  > Support (App/Scene Delegate, Assets, etc.)
+ 
  --------------------------
-
+ XXXXXXXXXXXXXXXXXXXXXXXX
+ XXXXXXXXXXXXXXXXXXXXXXXX
+ --------------------------
+ 
+ PROJECT NOTES:
+ 
 * GFAvatarImageView
     1. intentionally not handling errors for inclusion of placeholder images
     .. unlike for the network call for the Follower's username, login, etc.
@@ -197,8 +206,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     > its purpose is to pinpoint which UIResponder triggered the keyboard (e.g. UISearchBarTextField: 0x10386be00) and determine its frame / location
  
  * UIResponder+Utils
-    14. purpose = @ present, there's no simple func or extension to determine which textfield triggered the keyboard, so we'll have to do this manually by:
-    > 1. getting the textField's location with the custom '.currentResponder( )'  UIResponder extension
+    14. purpose = @ present, there's no simple func or extension to determine which textfield triggered the keyboard (first responder), so we'll have to do this manually by:
+    > 1. getting the textField's info with the custom '.currentResponder( )'  UIResponder extension
     > 2. determining whether the text field will be blocked @ the end of the keyboard's animating in
     >> note: I'm unsure if converting the currentTextField's frame relative to the superview was necessary, I got the same values when printing them out
     >> assumption was correct, docs says 'a view's frame prop already expresses location relative to superview', so I omitted the conversion bit

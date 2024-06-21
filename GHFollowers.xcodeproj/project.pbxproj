@@ -190,13 +190,13 @@
 			isa = PBXGroup;
 			children = (
 				40B0F8B32C2445F30037A378 /* TabBarControllers */,
+				401E775A2C12D42A00CBCB4D /* ChildViewControllers */,
 				401E77592C12D38300CBCB4D /* ImageViews */,
 				4035C8092C0D736A002BE09C /* Cells */,
 				401E775B2C12D49300CBCB4D /* Labels */,
 				401E77582C12D37700CBCB4D /* TextFields */,
 				401E77572C12D36200CBCB4D /* Buttons */,
 				401E77562C12D35B00CBCB4D /* Views */,
-				401E775A2C12D42A00CBCB4D /* ChildViewControllers */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
