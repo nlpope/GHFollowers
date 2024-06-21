@@ -72,7 +72,7 @@ extension UIViewController {
     // MARK: KEYBOARD
     func setupKeyboardHiding() {
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShowz), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -82,16 +82,11 @@ extension UIViewController {
         guard let userInfo = sender.userInfo,
               let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue,
               // see note 13 in app delegate
-              let currentTextField = UIResponder.currentFirst() as? UITextField else { return }
+              let currentTextField = UIResponder.currentResponder() as? UITextField else { return }
         
-        print("foo - userInfo: \(userInfo)")
-        print("foo - keyboardFrame: \(keyboardFrame)")
+        print("foo - userInfo: \(userInfo)\n")
+        print("foo - keyboardFrame: \(keyboardFrame)\n")
         print("foo - currentTextField: \(currentTextField)")
-    }
-    
-    
-    @objc func keyboardWillShowz(sender: NSNotification) {
-        view.frame.origin.y = -200
     }
     
     

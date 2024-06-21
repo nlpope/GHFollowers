@@ -187,11 +187,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     > it's not like we're going to put up a notif. onscreen telling the user the deletion was successful if the UI did that work for us
  
  *  SearchVC
-    12. consider replacing below 3 lines (top constraint via Sean Allen's Constant+Utils method) with swift arcade's UIResponder+Utils
-    > link: https://www.youtube.com/watch?v=O4tP7egAV1I&ab_channel=SwiftArcade
+    12. replacing variable top constraint (via Sean Allen's Constants+Utils > ScreenSize) method with swift arcade's UIViewController+Ext method
+    > source: https://www.youtube.com/watch?v=O4tP7egAV1I&ab_channel=SwiftArcade
     
  *  UIViewController+Ext
     13. this custom UIResponder utility was created in Utilities > UIResponder+Utils
+    > its purpose is to pinpoint which UIResponder triggered the keyboard (e.g. UISearchBarTextField: 0x10386be00) and determine its frame / location
+ 
+ * UIResponder+Utils
+    14. purpose = @ present, there's no simple func or extension to determine which textfield triggered the keyboard, so we'll have to do this manually
+    > to achieve this, 
  --------------------------
  
  */
