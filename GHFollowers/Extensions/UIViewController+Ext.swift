@@ -96,9 +96,6 @@ extension UIViewController {
             let newFrameY       = (textFieldTopY - keyboardTopY / 2) * -1
             view.frame.origin.y = newFrameY
         }
-        
-//        print("foo - currentTextFieldFrame: \(currentTextField.frame)\n")
-//        print("foo - convertedTextFieldFrame: \(convertedTextFieldFrame)\n")
     }
     
     

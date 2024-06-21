@@ -187,7 +187,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     > it's not like we're going to put up a notif. onscreen telling the user the deletion was successful if the UI did that work for us
  
  *  SearchVC
-    12. replacing variable top constraint (via Sean Allen's Constants+Utils > ScreenSize) method with swift arcade's UIViewController+Ext method
+    12. replacing logo's variable top constraint (via Sean Allen's Constants+Utils > ScreenSize) method with Jonathan Rasmusson's UIViewController+Ext method
     > YT source: https://www.youtube.com/watch?v=O4tP7egAV1I&ab_channel=SwiftArcade
     > Git source: https://github.com/jrasmusson/ios-professional-course/blob/main/Password-Reset/7-Dealing-Keyboards/README.md
     
@@ -201,6 +201,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     > 2. determining whether the text field will be blocked @ the end of the keyboard's animating in
     >> note: I'm unsure if converting the currentTextField's frame relative to the superview was necessary, I got the same values when printing them out
     >> assumption was correct, docs says 'a view's frame prop already expresses location relative to superview', so I omitted the conversion bit
+    >> I also changed some confusing/inconsistent var names (e.g. textBoxY > textFieldTopY)
+ 
     > 3. then adjusting the view up if so
  --------------------------
  
