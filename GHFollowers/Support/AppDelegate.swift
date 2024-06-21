@@ -190,7 +190,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     12. replacing logo's variable top constraint (via Sean Allen's Constants+Utils > ScreenSize) method with Jonathan Rasmusson's UIViewController+Ext method
     > YT source: https://www.youtube.com/watch?v=O4tP7egAV1I&ab_channel=SwiftArcade
     > Git source: https://github.com/jrasmusson/ios-professional-course/blob/main/Password-Reset/7-Dealing-Keyboards/README.md
-    
+    > Docs on iOS coord. system: https://developer.apple.com/library/archive/documentation/General/Conceptual/Devpedia-CocoaApp/CoordinateSystem.html
+ 
  *  UIViewController+Ext
     13. this custom UIResponder utility was created in Utilities > UIResponder+Utils
     > its purpose is to pinpoint which UIResponder triggered the keyboard (e.g. UISearchBarTextField: 0x10386be00) and determine its frame / location
@@ -201,6 +202,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     > 2. determining whether the text field will be blocked @ the end of the keyboard's animating in
     >> note: I'm unsure if converting the currentTextField's frame relative to the superview was necessary, I got the same values when printing them out
     >> assumption was correct, docs says 'a view's frame prop already expresses location relative to superview', so I omitted the conversion bit
+    >> works as expected on both iphone 15 pro & iphone SE
     >> I also changed some confusing/inconsistent var names (e.g. textBoxY > textFieldTopY)
  
     > 3. then adjusting the view up if so
