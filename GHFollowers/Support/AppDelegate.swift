@@ -180,7 +180,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  
  *  FavoriteCell & FavoritesListVC
     10. in FavoritesListVC we hard code the tableView to be 80 pts tall ...
-    > so the imgView it will contain is set to 60 to leave space in btwn the img & cell
+    > so the imgView it will contain is set to 60 to leave space in btwn the img & cell's upper & lower padding
  
  *  FavoritesListVC
     11. since the UI is communicating the success case (swipe to delete verification = row disapears), we can safely 'return' if no error takes place during deletion
@@ -188,15 +188,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  
  *  SearchVC
     12. replacing variable top constraint (via Sean Allen's Constants+Utils > ScreenSize) method with swift arcade's UIViewController+Ext method
-    > source: https://www.youtube.com/watch?v=O4tP7egAV1I&ab_channel=SwiftArcade
+    > YT source: https://www.youtube.com/watch?v=O4tP7egAV1I&ab_channel=SwiftArcade
+    > Git source: https://github.com/jrasmusson/ios-professional-course/blob/main/Password-Reset/7-Dealing-Keyboards/README.md
     
  *  UIViewController+Ext
     13. this custom UIResponder utility was created in Utilities > UIResponder+Utils
     > its purpose is to pinpoint which UIResponder triggered the keyboard (e.g. UISearchBarTextField: 0x10386be00) and determine its frame / location
  
  * UIResponder+Utils
-    14. purpose = @ present, there's no simple func or extension to determine which textfield triggered the keyboard, so we'll have to do this manually
-    > to achieve this, 
+    14. purpose = @ present, there's no simple func or extension to determine which textfield triggered the keyboard, so we'll have to do this manually by:
+    > 1. getting the textField's location with the custom '.currentResponder( )'  UIResponder extension
+    > 2. determining whether the text field will be blocked @ the end of the keyboard's animating in
+    >> note: I'm unsure if converting the currentTextField's frame relative to the superview was necessary, I got the same values when printing them out
+    >> assumption was correct, docs says 'a view's frame prop already expresses location relative to superview', so I omitted the conversion bit
+    > 3. then adjusting the view up if so
  --------------------------
  
  */
