@@ -44,6 +44,7 @@
 		40C676ED2C0094DF006B64F8 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 40C676EC2C0094DF006B64F8 /* Base */; };
 		40C676F72C018006006B64F8 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C676F62C018006006B64F8 /* SearchVC.swift */; };
 		40C676F92C018073006B64F8 /* FavoritesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C676F82C018073006B64F8 /* FavoritesListVC.swift */; };
+		40C74B902C27A08A00D9AB2B /* GFDataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C74B8F2C27A08A00D9AB2B /* GFDataLoadingVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		40C676EE2C0094DF006B64F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40C676F62C018006006B64F8 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		40C676F82C018073006B64F8 /* FavoritesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListVC.swift; sourceTree = "<group>"; };
+		40C74B8F2C27A08A00D9AB2B /* GFDataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFDataLoadingVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				40B375442C2132CB0009107A /* ItemInfoVCs */,
 				405EBE972C068A9B00A46C5D /* GFAlertChildVC.swift */,
 				406889CF2C19EF2A0064DA4C /* GFUserInfoHeaderChildVC.swift */,
+				40C74B8F2C27A08A00D9AB2B /* GFDataLoadingVC.swift */,
 			);
 			path = ChildViewControllers;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				403E45082C1E270F0021EA1D /* GFItemInfoView.swift in Sources */,
 				405EBE982C068A9B00A46C5D /* GFAlertChildVC.swift in Sources */,
 				40AFCC132C0A95F400A60EE7 /* NetworkManager.swift in Sources */,
+				40C74B902C27A08A00D9AB2B /* GFDataLoadingVC.swift in Sources */,
 				406889D22C19F0BC0064DA4C /* GFSecondaryTitleLabel.swift in Sources */,
 				40C676E02C0094DC006B64F8 /* SceneDelegate.swift in Sources */,
 				40B0F8B52C2446390037A378 /* GFTabBarController.swift in Sources */,

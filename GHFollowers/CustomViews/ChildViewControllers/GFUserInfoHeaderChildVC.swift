@@ -38,6 +38,27 @@ class GFUserInfoHeaderChildVC: UIViewController {
     }
     
     
+    func configureUIElements() {
+        downloadAvatarImage()
+        usernameLabel.text          = user.login
+        nameLabel.text              = user.name ?? ""
+        locationLabel.text          = user.location ?? "No Location"
+        bioLabel.text               = user.bio ?? ""
+        bioLabel.numberOfLines      = 3
+        
+        locationImageView.image     = UIImage(systemName: SFSymbols.location)
+        locationImageView.tintColor = .secondaryLabel
+    }
+    
+    
+    func downloadAvatarImage() {
+        NetworkManager.shared.downloadImage(from: user.avatarUrl) { [weak self] image in
+            guard let self = self else { return }
+            DispatchQueue.main.async { self.avatarImageView.image = image }
+        }
+    }
+    
+    
     func addSubviews() {
         let subviews = [avatarImageView, usernameLabel, nameLabel, locationImageView, locationLabel, bioLabel]
         
@@ -88,20 +109,4 @@ class GFUserInfoHeaderChildVC: UIViewController {
             bioLabel.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
-    
-    
-    func configureUIElements() {
-        avatarImageView.downloadImage(from: user.avatarUrl)
-        usernameLabel.text          = user.login
-        nameLabel.text              = user.name ?? ""
-        locationLabel.text          = user.location ?? "No Location"
-        bioLabel.text               = user.bio ?? ""
-        bioLabel.numberOfLines      = 3
-        
-        locationImageView.image     = UIImage(systemName: SFSymbols.location)
-        locationImageView.tintColor = .secondaryLabel
-    }
-    
-
-
 }

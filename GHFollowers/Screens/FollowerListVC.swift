@@ -11,7 +11,7 @@ protocol FollowerListVCDelegate: AnyObject {
     func didRequestFollowers(for username: String)
 }
 
-class FollowerListVC: UIViewController {
+class FollowerListVC: GFDataLoadingVC {
     
     //for UICollectionViewDiffableDataSource
     enum Section { case main }
@@ -97,6 +97,8 @@ class FollowerListVC: UIViewController {
                 if followers.count < 100 { self.hasMoreFollowers = false }
                 self.followers.append(contentsOf: followers)
                 
+                // remove below comment to test empty state conditions
+                // self.followers = []
                 if self.followers.isEmpty {
                     let message = "This user doesn't have any followers. Go follow them 😀."
                     DispatchQueue.main.async { self.showEmptyStateView(with: message, in: self.view) }

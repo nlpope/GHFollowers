@@ -136,6 +136,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  > Support (App/Scene Delegate, Assets, the rest)
  >> except info.plist, leave this outside/alone
  
+ * When to switch to main thread
+ > updating UI? - switch to main thread
+ >> ex: DispatchQueue.main.async { self.image = image }
+ 
  --------------------------
  XXXXXXXXXXXXXXXXXXXXXXXX
  XXXXXXXXXXXXXXXXXXXXXXXX
@@ -147,6 +151,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     1. intentionally not handling errors for inclusion of placeholder images
     .. unlike for the network call for the Follower's username, login, etc.
     .. otherwise, we'd be interrupting with error msg's for a very common instance
+    .. this is why we don't need a result type returned from the escaping closure
+    > result types send an object in success cases & an error in failures (something we have no use for, given the placeholder image's communicating the same thing)
   
 * FollowerListVC
     2. this is where the NetworkManager's 'completed(.success(followers))' is used
@@ -219,6 +225,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     >> I also changed some confusing/inconsistent var names (e.g. textBoxY > textFieldTopY)
  
     > 3. then adjusting the view up if so
+ 
+ *  NetworkManager
+    15. in the 'else { return } bits, we can no longer let the 'return' sit alone
+    > the completion is expecting either a UIImage or nil - mind the '(UIImage?)' in its declaration
+    > ... for this, when a guard statement fails we must write 'completed(nil)' before the return
+    > ... when a guard statement passes we must write 'completed(image)' before the return
+    > ... but simply writing return on a fail is not allowed
+ 
+ * GFDataLoadingVC
+    16. containerView can be held in local scope (past the imports section) & taken out of 'fileprivate' status, because this is a  specific class and no longer an extension of all VCs
+    > now, any children / subclasses of this new class have access to both the VC type's extensions AND the funcs specific to those VCs that potentially show a loading spinner
+    > change is because not all VCs need to show a loading view (i.e. searchVC)
+    
+ 
  --------------------------
  
  */

@@ -12,7 +12,7 @@ protocol UserInfoVCDelegate: AnyObject {
     func didTapGitFollowers(for user: User)
 }
 
-class UserInfoVC: UIViewController {
+class UserInfoVC: GFDataLoadingVC {
     
     let headerView               = UIView()
     let itemViewOneContainer     = UIView()
