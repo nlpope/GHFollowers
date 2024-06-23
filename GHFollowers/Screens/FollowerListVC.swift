@@ -72,7 +72,7 @@ class FollowerListVC: GFDataLoadingVC {
         mySearchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController                         = mySearchController
         navigationItem.hidesSearchBarWhenScrolling              = false
-
+        navigationItem.searchController?.dismiss(animated: true)
     }
     
     
@@ -97,11 +97,13 @@ class FollowerListVC: GFDataLoadingVC {
                 if followers.count < 100 { self.hasMoreFollowers = false }
                 self.followers.append(contentsOf: followers)
                 
-                // remove below comment to test empty state conditions
-                // self.followers = []
+                self.followers = []
                 if self.followers.isEmpty {
                     let message = "This user doesn't have any followers. Go follow them 😀."
-                    DispatchQueue.main.async { self.showEmptyStateView(with: message, in: self.view) }
+                    DispatchQueue.main.async {
+//                        self.navigationItem.searchController?.dismis
+                        self.showEmptyStateView(with: message, in: self.view)
+                    }
                     return
                 }
                 
@@ -164,7 +166,7 @@ class FollowerListVC: GFDataLoadingVC {
 }
 
 
-//MARK: COLLECTIONVIEW DELEGATE EXTENSION
+//MARK: COLLECTIONVIEW DELEGATE METHODS
 extension FollowerListVC: UICollectionViewDelegate {
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         let offsetY         = scrollView.contentOffset.y
@@ -195,7 +197,7 @@ extension FollowerListVC: UICollectionViewDelegate {
 }
 
 
-// MARK: SEARCHBAR METHODS
+// MARK: SEARCHBAR DELEGATE METHODS
 extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -222,7 +224,7 @@ extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
 }
 
 
-// MARK: DELEGATE METHODS
+// MARK: FOLLOWERLIST DELEGATE METHODS
 extension FollowerListVC: FollowerListVCDelegate {
     
     func didRequestFollowers(for username: String) {
