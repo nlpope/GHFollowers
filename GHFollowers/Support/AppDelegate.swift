@@ -237,6 +237,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     16. containerView can be held in local scope (past the imports section) & taken out of 'fileprivate' status, because this is a  specific class and no longer an extension of all VCs
     > now, any children / subclasses of this new class have access to both the VC type's extensions AND the funcs specific to those VCs that potentially show a loading spinner
     > change is because not all VCs need to show a loading view (i.e. searchVC)
+ 
+ * FollowerListVC
+    17. Why is [weak self] not captured in DispatchQueue?
+    > you geneerally don't need to worry about retain cycles with DispatchQueue, as the cycle is temporary in DispatchQueue's methods.
+    > source: https://stackoverflow.com/questions/41991467/where-does-the-weak-self-go
+    > source (more clear): https://forums.swift.org/t/retain-cycle-with-disptachqueue/63791/3
     
  
  --------------------------
