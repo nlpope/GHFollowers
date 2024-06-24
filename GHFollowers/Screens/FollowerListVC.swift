@@ -76,6 +76,11 @@ class FollowerListVC: GFDataLoadingVC {
     }
     
     
+    func dismissSearchController() {
+        navigationItem.searchController?.searchBar.isHidden = true
+    }
+    
+    
     func configureCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: view))
         view.addSubview(collectionView)
@@ -101,7 +106,7 @@ class FollowerListVC: GFDataLoadingVC {
                 if self.followers.isEmpty {
                     let message = "This user doesn't have any followers. Go follow them 😀."
                     DispatchQueue.main.async {
-//                        self.navigationItem.searchController?.dismis
+                        self.dismissSearchController()
                         self.showEmptyStateView(with: message, in: self.view)
                     }
                     return
