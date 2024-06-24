@@ -240,9 +240,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  
  * FollowerListVC
     17. Why is [weak self] not captured in DispatchQueue?
-    > you geneerally don't need to worry about retain cycles with DispatchQueue, as the cycle is temporary in DispatchQueue's methods.
+    > you geneerally don't need to worry about retain cycles with DispatchQueue, as the cycle is temporary in DispatchQueue's methods. This makes [weak self] unnecessary
     > source: https://stackoverflow.com/questions/41991467/where-does-the-weak-self-go
-    > source (more clear): https://forums.swift.org/t/retain-cycle-with-disptachqueue/63791/3
+    > source (more clear, see comment by Tera): https://forums.swift.org/t/retain-cycle-with-disptachqueue/63791/3
     
  
  --------------------------
