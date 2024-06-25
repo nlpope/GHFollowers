@@ -255,6 +255,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     > ... there doesn't seem to be a way to programmatically trigger the behavior tied to the searchBarCancelButtonClicked delegate method once the user deletes the final character from a seach
     > when I try and dismiss the search bar @ the 'textDidChange' method for the instance where the user backspaced all the way, I'm able to dismiss the keyboard by using either the 'resignFirstResponder() or endEditing() props on the searchBar
     > ... but I'm unable to cancel the search entirely & I lose the title in the VC
+    > closest sltn's I could find only related to SwiftUI
+ 
+    20. There was no way to get back to the user info VC should one want to see that collection of info laid out again from the followerListVC
+    > so I added another bar button item to the navigation controller to jump to it
+    > no need to make a network call, unlike 'adding to favorites' button, the info needed for the UserInfoVC is gathered within that VC using the same method
+    > ... this is also why we need not show the loading view - all that's handled in the next UserInfoVC's network call (dismissal included)
+    > ... NetworkManager's getUserInfo is only necessary up top to gather the @ present unavailable avatar image used to configure the user's favorite cell
     
  
  --------------------------

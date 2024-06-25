@@ -116,13 +116,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>230</string>
+							<string>243</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>229</string>
+							<string>242</string>
 							<key>Timestamp</key>
-							<string>741000233.8580101</string>
+							<string>741003862.3554471</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -147,7 +147,7 @@
 						<key>trailing</key>
 						<string>        if searchText == "" {
             print("dismiss the searchbar")
-            //searchBar.resignFirstResponder()
+            // see note 19 in app delegate
 </string>
 					</dict>
 					<key>title</key>
@@ -163,13 +163,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>230</string>
+							<string>243</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>229</string>
+							<string>242</string>
 							<key>Timestamp</key>
-							<string>741000233.85761</string>
+							<string>741003862.355495</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -194,7 +194,7 @@
 						<key>trailing</key>
 						<string>        if searchText == "" {
             print("dismiss the searchbar")
-            //searchBar.resignFirstResponder()
+            // see note 19 in app delegate
 </string>
 					</dict>
 					<key>title</key>
@@ -257,13 +257,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>114</string>
+							<string>116</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>113</string>
+							<string>115</string>
 							<key>Timestamp</key>
-							<string>740986767.329159</string>
+							<string>741001626.183369</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>

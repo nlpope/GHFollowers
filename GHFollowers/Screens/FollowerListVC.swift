@@ -63,7 +63,9 @@ class FollowerListVC: GFDataLoadingVC {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
-        navigationItem.rightBarButtonItem = addButton
+        let userInfoButton = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(getUserInfoTapped))
+        
+        navigationItem.rightBarButtonItems = [addButton, userInfoButton]
     }
     
     
@@ -175,6 +177,17 @@ class FollowerListVC: GFDataLoadingVC {
         }
         
     }
+    
+    
+    @objc func getUserInfoTapped() {
+        // see note 20 in app delegate
+        let destVC          = UserInfoVC()
+        destVC.username     = username
+        destVC.delegate     = self
+        
+        let navController   = UINavigationController(rootViewController: destVC)
+        present(navController, animated: true)
+    }
 }
 
 
@@ -194,8 +207,8 @@ extension FollowerListVC: UICollectionViewDelegate {
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //pass login onto userinfoVC
-        //present userinfoVC
+        // pass login onto userinfoVC
+        // present userinfoVC
         let activeArray     = isSearching ? filteredFollowers : followers
         let follower        = activeArray[indexPath.item]
         
@@ -230,9 +243,8 @@ extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText == "" {
             print("dismiss the searchbar")
-            //searchBar.resignFirstResponder()
             // see note 19 in app delegate
-            searchBar.endEditing(true)
+            searchBar.resignFirstResponder()
             isSearching = false
             updateData(on: followers)
         }
