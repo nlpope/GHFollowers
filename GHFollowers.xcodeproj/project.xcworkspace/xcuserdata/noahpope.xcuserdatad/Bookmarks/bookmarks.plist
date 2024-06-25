@@ -116,13 +116,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>223</string>
+							<string>227</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>222</string>
+							<string>226</string>
 							<key>Timestamp</key>
-							<string>740894237.342997</string>
+							<string>740980345.851113</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -163,13 +163,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>223</string>
+							<string>227</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>222</string>
+							<string>226</string>
 							<key>Timestamp</key>
-							<string>740894237.343053</string>
+							<string>740980345.851068</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -246,6 +246,53 @@
 					</dict>
 					<key>title</key>
 					<string>diffable datasource hasher / login gets turned into UUID </string>
+					<key>type</key>
+					<string>bookmark</string>
+				</dict>
+				<dict>
+					<key>destination</key>
+					<dict>
+						<key>location-parameters</key>
+						<dict>
+							<key>EndingColumnNumber</key>
+							<string>0</string>
+							<key>EndingLineNumber</key>
+							<string>112</string>
+							<key>StartingColumnNumber</key>
+							<string>0</string>
+							<key>StartingLineNumber</key>
+							<string>111</string>
+							<key>Timestamp</key>
+							<string>740980455.175493</string>
+						</dict>
+						<key>rebasable-url</key>
+						<dict>
+							<key>base</key>
+							<string>workspace</string>
+							<key>payload</key>
+							<dict>
+								<key>relative-path</key>
+								<string>GHFollowers/Screens/FollowerListVC.swift</string>
+							</dict>
+						</dict>
+					</dict>
+					<key>text-context</key>
+					<dict>
+						<key>focused</key>
+						<string>                        // see note 17 in app delegate
+</string>
+						<key>leading</key>
+						<string>                    let message = "This user doesn't have any followers. Go follow them 😀."
+                    DispatchQueue.main.async {
+</string>
+						<key>trailing</key>
+						<string>                        self.dismissSearchController()
+                        self.showEmptyStateView(with: message, in: self.view)
+                    }
+</string>
+					</dict>
+					<key>title</key>
+					<string>weak self &amp; DispatchQueue</string>
 					<key>type</key>
 					<string>bookmark</string>
 				</dict>
