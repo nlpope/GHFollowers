@@ -57,7 +57,7 @@ class UserInfoVC: GFDataLoadingVC {
     
     
     func configureUIElements(with user: User) {
-        //see note 7 in app delegate
+        // see note 7 in app delegate
         let repoItemChildVC             = GFRepoItemChildVC(user: user)
         repoItemChildVC.delegate        = self
         

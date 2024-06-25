@@ -243,6 +243,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     > you geneerally don't need to worry about retain cycles with DispatchQueue, as the cycle is temporary in DispatchQueue's methods. This makes [weak self] unnecessary
     > source: https://stackoverflow.com/questions/41991467/where-does-the-weak-self-go
     > source (more clear, see comment by Tera): https://forums.swift.org/t/retain-cycle-with-disptachqueue/63791/3
+ 
+ *  GFAlertChildVC
+    18. these subviews were originally added in their respective configure funcs
+    > however we can easily add them all in the viewDidLoad
+    > just be mindful of those views added with respect to the containerView
+    > NOTE: only do that in the VDL if the subviews are being added in different funcs. Not in different funcs? call custom addSubviews inside the one func it's being called in originally
     
  
  --------------------------

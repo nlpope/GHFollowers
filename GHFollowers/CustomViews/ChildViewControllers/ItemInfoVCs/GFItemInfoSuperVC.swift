@@ -65,8 +65,7 @@ class GFItemInfoSuperVC: UIViewController {
     
     
     private func layoutUI() {
-        view.addSubview(stackView)
-        view.addSubview(actionButton)
+        view.addSubviews(stackView, actionButton)
         //no need to add GFItemInfoView types to subview
         //..already done in said UIView()
         

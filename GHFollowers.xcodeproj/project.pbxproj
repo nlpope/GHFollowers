@@ -45,6 +45,7 @@
 		40C676F72C018006006B64F8 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C676F62C018006006B64F8 /* SearchVC.swift */; };
 		40C676F92C018073006B64F8 /* FavoritesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C676F82C018073006B64F8 /* FavoritesListVC.swift */; };
 		40C74B902C27A08A00D9AB2B /* GFDataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C74B8F2C27A08A00D9AB2B /* GFDataLoadingVC.swift */; };
+		40C74B922C2A77F100D9AB2B /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C74B912C2A77F100D9AB2B /* UIView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		40C676F62C018006006B64F8 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		40C676F82C018073006B64F8 /* FavoritesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListVC.swift; sourceTree = "<group>"; };
 		40C74B8F2C27A08A00D9AB2B /* GFDataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFDataLoadingVC.swift; sourceTree = "<group>"; };
+		40C74B912C2A77F100D9AB2B /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 			children = (
 				40B375462C2150F50009107A /* Date+Ext.swift */,
 				405EBE9B2C0906F600A46C5D /* UIViewController+Ext.swift */,
+				40C74B912C2A77F100D9AB2B /* UIView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				4035C8082C0D67E9002BE09C /* ErrorMessage+Utils.swift in Sources */,
 				40BD42362C1CC3BB00CE5C55 /* Constants+Utils.swift in Sources */,
 				40AFCC102C0A86CF00A60EE7 /* User.swift in Sources */,
+				40C74B922C2A77F100D9AB2B /* UIView+Ext.swift in Sources */,
 				40C676E82C0094DC006B64F8 /* GHFollowers.xcdatamodeld in Sources */,
 				4045F6172C01978500422790 /* GFButton.swift in Sources */,
 				40C676F92C018073006B64F8 /* FavoritesListVC.swift in Sources */,

@@ -35,6 +35,10 @@ class GFAlertChildVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
+        // see note 18 in app delegate
+        view.addSubviews(containerView)
+        containerView.addSubviews(titleLabel, messageLabel, actionButton)
+        
         configureContainerView()
         configureTitleLabel()
         configureActionButton()
@@ -43,8 +47,6 @@ class GFAlertChildVC: UIViewController {
     }
     
     func configureContainerView() {
-        view.addSubview(containerView)
-        
         NSLayoutConstraint.activate([
             containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -55,7 +57,6 @@ class GFAlertChildVC: UIViewController {
     
     
     func configureTitleLabel() {
-        containerView.addSubview(titleLabel)
         //for if alertTitle's custom init isn't used & it comes up nil
         titleLabel.text = alertTitle ?? "Something went wrong"
         
@@ -69,7 +70,6 @@ class GFAlertChildVC: UIViewController {
     
     
     func configureMessageLabel() {
-        containerView.addSubview(messageLabel)
         messageLabel.text          = message ?? "Unable to complete request"
         messageLabel.numberOfLines = 4
         
@@ -83,7 +83,6 @@ class GFAlertChildVC: UIViewController {
     
     
     func configureActionButton() {
-        containerView.addSubview(actionButton)
         actionButton.setTitle(buttonTitle, for: .normal)
         actionButton.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
         

@@ -60,12 +60,7 @@ class GFUserInfoHeaderChildVC: UIViewController {
     
     
     func addSubviews() {
-        let subviews = [avatarImageView, usernameLabel, nameLabel, locationImageView, locationLabel, bioLabel]
-        
-        for subview in subviews {
-            view.addSubview(subview)
-        }
-        
+        view.addSubviews(avatarImageView, usernameLabel, nameLabel, locationImageView, locationLabel, bioLabel)
     }
     
     

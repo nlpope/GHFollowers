@@ -121,6 +121,7 @@ class FollowerListVC: GFDataLoadingVC {
             case .failure(let error):
                 self.presentGFAlertOnMainThread(alertTitle: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")
             }
+            self.isLoadingMoreFollowers = false
         }
     }
     
@@ -183,7 +184,7 @@ extension FollowerListVC: UICollectionViewDelegate {
         let height          = scrollView.frame.size.height
         
         if offsetY > contentHeight - height {
-            guard hasMoreFollowers else { return }
+            guard hasMoreFollowers, !isLoadingMoreFollowers else { return }
             page += 1
             getFollowers(username: username, page: page)
         }
