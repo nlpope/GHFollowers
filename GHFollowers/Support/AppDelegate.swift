@@ -262,6 +262,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     > no need to make a network call, unlike 'adding to favorites' button, the info needed for the UserInfoVC is gathered within that VC using the same method
     > ... this is also why we need not show the loading view - all that's handled in the next UserInfoVC's network call (dismissal included)
     > ... NetworkManager's getUserInfo is only necessary up top to gather the @ present unavailable avatar image used to configure the user's favorite cell
+ 
+*   GFBodyLabel
+    21. adjustsFontForContentSizeCategory allows the text size to change depending on the text size on the user's phone - ALWAYS INCLUDE THIS IN BODY LABELS
+    > you can test for this using the environment overrides (img of 2 sliders on xcode's bottom left) & sliding the 'Dynamic Type' scale
     
  
  --------------------------

@@ -9,10 +9,6 @@
 
 import UIKit
 
-protocol FollowerListVCDelegate: AnyObject {
-    func didRequestFollowers(for username: String)
-}
-
 class FollowerListVC: GFDataLoadingVC {
     
     //for UICollectionViewDiffableDataSource
@@ -253,7 +249,7 @@ extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
 
 
 // MARK: FOLLOWERLIST DELEGATE METHODS
-extension FollowerListVC: FollowerListVCDelegate {
+extension FollowerListVC: UserInfoVCDelegate {
     
     func didRequestFollowers(for username: String) {
         self.username   = username
