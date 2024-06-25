@@ -44,7 +44,7 @@ class GFItemInfoSuperVC: UIViewController {
         configureActionButton()
     }
     
-    //this is the rounded, slighty gray background card the GFItemInfoViews are put into
+    // the rounded, slighty gray background card the GFItemInfoViews are put into
     private func configureBackgroundView() {
         view.layer.cornerRadius = 18
         view.backgroundColor    = .secondarySystemBackground
@@ -65,7 +65,7 @@ class GFItemInfoSuperVC: UIViewController {
     }
     
     
-    //nothing in here - func to be overridden in subclasses
+    // empty func, nothing in here for it to be overridden in subclasses
     @objc func actionButtonTapped() {}
     
     
