@@ -100,7 +100,7 @@ class UserInfoVC: GFDataLoadingVC {
         NSLayoutConstraint.activate([
             //see note 4 in app delegate
             headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            headerView.heightAnchor.constraint(equalToConstant: 180),
+            headerView.heightAnchor.constraint(equalToConstant: 210),
             
             itemViewOneContainer.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: padding),
             itemViewOneContainer.heightAnchor.constraint(equalToConstant: itemHeight),

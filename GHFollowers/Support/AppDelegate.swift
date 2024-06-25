@@ -249,6 +249,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     > however we can easily add them all in the viewDidLoad
     > just be mindful of those views added with respect to the containerView
     > NOTE: only do that in the VDL if the subviews are being added in different funcs. Not in different funcs? call custom addSubviews inside the one func it's being called in originally
+ 
+ * FollowerListVC
+    19. @ present theres isn't a way to get the VC's title back after  a search unless the 'cancel' button is clicked
+    > ... there doesn't seem to be a way to programmatically trigger the behavior tied to the searchBarCancelButtonClicked delegate method once the user deletes the final character from a seach
+    > when I try and dismiss the search bar @ the 'textDidChange' method for the instance where the user backspaced all the way, I'm able to dismiss the keyboard by using either the 'resignFirstResponder() or endEditing() props on the searchBar
+    > ... but I'm unable to cancel the search entirely & I lose the title in the VC
     
  
  --------------------------

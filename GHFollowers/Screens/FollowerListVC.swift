@@ -5,6 +5,8 @@
 //  Created by Noah Pope on 5/25/24.
 //
 
+// LOSING USERNAME TITLE AFTER I EXIT A SEARCH
+
 import UIKit
 
 protocol FollowerListVCDelegate: AnyObject {
@@ -73,17 +75,17 @@ class FollowerListVC: GFDataLoadingVC {
         mySearchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController                         = mySearchController
         navigationItem.hidesSearchBarWhenScrolling              = false
-        navigationItem.searchController?.dismiss(animated: true)
     }
     
     
-    func dismissSearchController() {
+    func hideSearchController() {
         navigationItem.searchController?.searchBar.isHidden = true
     }
     
     
     func configureCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: view))
+        
         view.addSubview(collectionView)
         collectionView.delegate         = self
         collectionView.backgroundColor  = .systemBackground
@@ -110,7 +112,7 @@ class FollowerListVC: GFDataLoadingVC {
                     let message = "This user doesn't have any followers. Go follow them 😀."
                     DispatchQueue.main.async {
                         // see note 17 in app delegate
-                        self.dismissSearchController()
+                        self.hideSearchController()
                         self.showEmptyStateView(with: message, in: self.view)
                     }
                     return
@@ -227,6 +229,10 @@ extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText == "" {
+            print("dismiss the searchbar")
+            //searchBar.resignFirstResponder()
+            // see note 19 in app delegate
+            searchBar.endEditing(true)
             isSearching = false
             updateData(on: followers)
         }
