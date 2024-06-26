@@ -7,13 +7,30 @@
 
 import UIKit
 
+protocol GFRepoItemChildVCDelegate: AnyObject {
+    func didTapGitHubProfile(for user: User)
+}
+
 class GFRepoItemChildVC: GFItemInfoSuperVC {
     
-    //though init(user:) is not here, it is still necessary for the SuperVC
+    weak var delegate: GFRepoItemChildVCDelegate!
+    
+    init(user: User, delegate: GFRepoItemChildVCDelegate) {
+        super.init(user: user)
+        self.delegate = delegate
+    }
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureItems()
     }
+    
     
     private func configureItems() {
         itemInfoViewOne.set(itemInfoType: .repos, withCount: user.publicRepos)

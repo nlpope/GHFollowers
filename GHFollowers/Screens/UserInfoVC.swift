@@ -57,14 +57,10 @@ class UserInfoVC: GFDataLoadingVC {
     
     func configureUIElements(with user: User) {
         // see note 7 in app delegate
-        let repoItemChildVC             = GFRepoItemChildVC(user: user)
-        repoItemChildVC.delegate        = self
-        
-        let followerItemChildVC         = GFFollowerItemChildVC(user: user)
-        followerItemChildVC.delegate    = self
-        
-        self.add(childVC: repoItemChildVC, toContainer: self.itemViewOneContainer)
-        self.add(childVC: followerItemChildVC, toContainer: self.itemViewTwoContainer)
+        self.add(childVC: GFRepoItemChildVC(user: user, delegate: self),
+                 toContainer: self.itemViewOneContainer)
+        self.add(childVC: GFFollowerItemChildVC(user: user, delegate: self),
+                 toContainer: self.itemViewTwoContainer)
         self.add(childVC: GFUserInfoHeaderChildVC(user: user), toContainer: self.headerView)
         self.dateLabel.text = "GitHub since \(user.createdAt.convertToMonthYearFormat())"
     }
@@ -124,7 +120,8 @@ class UserInfoVC: GFDataLoadingVC {
 
 
 // MARK: DELEGATE METHODS
-extension UserInfoVC: ItemInfoVCDelegate {
+extension UserInfoVC: GFRepoItemChildVCDelegate, GFFollowerItemChildVCDelegate {
+    
     func didTapGitHubProfile(for user: User) {
         guard let url = URL(string: user.htmlUrl) else {
             presentGFAlertOnMainThread(alertTitle: "Invalid URL", message: "The url attached to this user is invalid.", buttonTitle: "Ok")

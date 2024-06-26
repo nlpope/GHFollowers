@@ -7,11 +7,6 @@
 
 import UIKit
 
-protocol ItemInfoVCDelegate: AnyObject {
-    func didTapGitHubProfile(for user: User)
-    func didTapGitFollowers(for user: User)
-}
-
 //super class for GFRepoItemChildVC & GFFollowerItemChildVC
 //see note 6 in app delegate
 class GFItemInfoSuperVC: UIViewController {
@@ -22,7 +17,6 @@ class GFItemInfoSuperVC: UIViewController {
     let actionButton    = GFButton()
     
     var user: User!
-    weak var delegate: ItemInfoVCDelegate!
     
     
     init(user: User) {

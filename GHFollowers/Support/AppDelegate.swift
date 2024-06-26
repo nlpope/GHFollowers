@@ -188,6 +188,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     > also, we needed access to the '.delegate' property after initializing the user
     >> this is not cleanly / done in the network call, so it's another reason it was refactored out into its own func.
     >> also for this reason, we no longer need to initialize the GFRepo/FollowerItemChildVC subclasses in the 'self.add' method
+    
+    > UPDATE: this was further refactored so that the delegate is initialized along with the user from their respective VCs
+    >> this was done purely for readability / aesthetic
  
  * PersistenceManager
     8. enum is used instead of struct for one minor difference: you can initialize an empty struce; you cannot initialize an empty enum
@@ -266,6 +269,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 *   GFBodyLabel
     21. adjustsFontForContentSizeCategory allows the text size to change depending on the text size on the user's phone - ALWAYS INCLUDE THIS IN BODY LABELS
     > you can test for this using the environment overrides (img of 2 sliders on xcode's bottom left) & sliding the 'Dynamic Type' scale
+ 
+ *  FavoriteCell
+    22. There was a PROBLEM; The cells were displaying recycled images the first time favorites tab is visited, so the wrong profile pic would appear next to the name
+    > SOLVE: setting the imageView in the favorite cell to Image.placeholder just before we download the image - This prevented me from seeing the old picture in the dequeued reusable cell (from old scrolls I'm assuming)
+    > note that the cache that was implemented also helps with this when the image was already downloaded
     
  
  --------------------------
