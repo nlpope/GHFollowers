@@ -85,32 +85,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  swift @ version: 5.10.1
  xcode @ version: 15.4
  --------------------------
- SHORTCUTS:
+ SHORTCUTS (GENERAL):
  
- * bookmark goals by right clicking a line
- > more preferably, type '#warning("message")' instead to have TO DO ITEMS UP FRONT
- * create new code snippets: right click + "create code snippet"
- * edit this code snippet: cmd + shift + L
- * emoji keyboard: cmd + cntrl + spacebar
- * force quit on mac: cmd + opt + esc
- * importing UIKit also imports Foundation (never import Foundation if UIkit is in play)
- * storyboard object list: cmd + shift + L (double check?)
+ *  access quick actions (XCode 15) = cmd + shift + a
+    > use to access 'minimap'
+    > use to quick change 'theme' - current = midnight
+ *  bookmark goals by right clicking a line
+    > more preferably, type '#warning("message")' instead to have 'return to' items clear & present
+ *  clean XCode build folder = cmd + shift + K
+ *  create new code snippets: right click + "create code snippet"
+ *  duplicate a line = cmd + D
+ *  edit multiple lines at once: control + shift + click away then start typing
+ *  edit this / saved code snippet: cmd + shift + L
+ *  emoji keyboard: cmd + cntrl + spacebar
+ *  force quit on mac: cmd + opt + esc
+ *  importing UIKit also imports Foundation (never import Foundation if UIkit is in play)
+ *  new XCode internal tab = cmd + ctrl + T
+    > hotkey for this = opt + click any file in your project folder
+ *  storyboard object list: cmd + shift + L (double check?)
  
- * access quick actions (XCode 15) = cmd + shift + a
- > use to access 'minimap'
- > use to quick change 'theme' - current = midnight
- * clean XCode build folder = cmd + shift + K
- * create new XCode internal tab = cmd + ctrl + T
- > hotkey for this = opt + click any file in your project folder
- * duplicate a line = cmd + D
- * edit multiple lines at once: control + shift + click away then start typing
- * hide/reveal debug area = cmd + shift + Y
- * hide/reveal console = cmd + shift + C
- * hide/reveal left pane = cmd + 0
- * hide/reveal right pane = cmd + shift + 0
- * hide/reveal preview window = cmd + shift + enter
+ SHORTCUTS (HIDE / REVEAL PANES):
  
- * human interface guidelines: https://developer.apple.com/design/human-interface-guidelines
+ *  hide/reveal debug & console area = cmd + shift + Y
+ *  hide/reveal left pane = cmd + 0
+ *  hide/reveal right pane = cmd + shift + 0
+ *  hide/reveal preview window = cmd + shift + enter
  
  --------------------------
  XXXXXXXXXXXXXXXXXXXXXXXX
@@ -120,13 +119,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  HELPFUL TIPS:
  
  *  Code formatting:
-    > order = imports, class declaration,
+    > order = vars/lets, init methods, view lifecycle methods (VDL), funcs
     > 1 space after imports
     > 1 space after class / struct / enum declarations
     > 2 spaces after vars just before methods
     > 2 spaces between funcs
     >> no spaces on 1st line after func declaration
 
+ *  Debugging
+    > see Stanford: https://www.youtube.com/watch?v=CRxHhx_pubY&list=PL3d_SFOiG7_8ofjyKzX6Nl1wZehbdiZC_&index=3&ab_channel=CS193P
+ 
  *  DispatchQueue-ing to main thread:
     > updating UI? - switch to main thread
     >> ex: DispatchQueue.main.async { self.image = image }
@@ -140,6 +142,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     > Screens (VCs)
     > Support (App/Scene Delegate, Assets, the rest)
     >> except info.plist, leave this outside/alone
+ 
+ *  Human interface guidelines: https://developer.apple.com/design/human-interface-guidelines
  
  *  MVC = "Does my View Controller need to know about this?"
     >  basically if you see NO GREEN TEXT (ref's to props created in the VC) in the func, it can be refactored to another file.
