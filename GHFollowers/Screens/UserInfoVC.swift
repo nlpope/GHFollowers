@@ -3,10 +3,11 @@
 //  GHFollowers
 //
 //  Created by Noah Pope on 6/10/24.
-//  OG name = UserInfoVC
+//
 
 import UIKit
 
+// see note 24 in app delegate
 protocol UserInfoVCDelegate: AnyObject {
     func didRequestFollowers(for username: String)
 }
@@ -89,8 +90,7 @@ class UserInfoVC: GFDataLoadingVC {
             ])
         }
         
-//        itemViewOneContainer.backgroundColor = .systemPink
-//        itemViewTwoContainer.backgroundColor = .systemBlue
+        // see note 23 in app delegate
             
         NSLayoutConstraint.activate([
             //see note 4 in app delegate
@@ -105,10 +105,7 @@ class UserInfoVC: GFDataLoadingVC {
             
             dateLabel.topAnchor.constraint(equalTo: itemViewTwoContainer.bottomAnchor, constant: padding),
             dateLabel.heightAnchor.constraint(equalToConstant: 50)
-            
-            
         ])
-        
     }
 
     

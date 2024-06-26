@@ -5,8 +5,17 @@
 //  Created by Noah Pope on 6/26/24.
 //
 
-import Foundation
+import UIKit
 
 extension UITableView {
     
+    func reloadDataOnMainThread() {
+        DispatchQueue.main.async {
+            self.reloadData()
+        }
+    }
+    
+    func removeExcessCells() {
+        tableFooterView = UIView(frame: .zero)
+    }
 }

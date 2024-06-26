@@ -274,6 +274,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     22. There was a PROBLEM; The cells were displaying recycled images the first time favorites tab is visited, so the wrong profile pic would appear next to the name
     > SOLVE: setting the imageView in the favorite cell to Image.placeholder just before we download the image - This prevented me from seeing the old picture in the dequeued reusable cell (from old scrolls I'm assuming)
     > note that the cache that was implemented also helps with this when the image was already downloaded
+ 
+ *  UserInfoVC
+    23. this is where you can test the view containers before filling them with view by tinkering with the background colors. For example:
+    > itemViewOneContainer.backgroundColor = .systemPink
+    > itemViewTwoContainer.backgroundColor = .systemBlue
+ 
+ *  UserInfoVC
+    24. finish researching & implementing UIView.fitToSize( )
+    > see 'iPhone SE - UserInfoVC Fixes' video
+    >> Abdulaziz Alobaili's comment
     
  
  --------------------------
