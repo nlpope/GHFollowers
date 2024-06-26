@@ -289,8 +289,8 @@
 </string>
 						<key>trailing</key>
 						<string>    func setupKeyboardHiding() {
-        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
 </string>
 					</dict>
 					<key>title</key>

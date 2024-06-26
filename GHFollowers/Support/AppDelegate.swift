@@ -119,26 +119,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  
  HELPFUL TIPS:
  
- * MVC = "Does my View Controller need to know about this?"
- >  basically if you see NO GREEN TEXT (ref's to props created in the VC) in the func, it can be refactored to another file.
- >> the background color, border width, & corner radius of a container for an alert? No; Include in separate UIView
- >> NSLayoutContstraints for the container? Yes.
- >> if a refactored view was referenced in the OG func and is throwing an error once you move it, pass in the view using:
- func functionName(in view: UIView) { }
+ *  Code formatting:
+    > order = imports, class declaration,
+    > 1 space after imports
+    > 1 space after class / struct / enum declarations
+    > 2 spaces after vars just before methods
+    > 2 spaces between funcs
+    >> no spaces on 1st line after func declaration
+
+ *  DispatchQueue-ing to main thread:
+    > updating UI? - switch to main thread
+    >> ex: DispatchQueue.main.async { self.image = image }
  
- * instead of MVC, MVVM, etc. start with:
- > Extensions - "...+Ext"
- > Utilities (error msgs, constant enums, UIHelpers) - "...+Utils"
- > Managers
- > Models
- > CustomViews
- > Screens (VCs)
- > Support (App/Scene Delegate, Assets, the rest)
- >> except info.plist, leave this outside/alone
+ *  Folders = instead of MVC, MVVM, etc. start with:
+    > Extensions - "...+Ext"
+    > Utilities (error msgs, constant enums, UIHelpers) - "...+Utils"
+    > Managers
+    > Models
+    > CustomViews
+    > Screens (VCs)
+    > Support (App/Scene Delegate, Assets, the rest)
+    >> except info.plist, leave this outside/alone
  
- * When to switch to main thread
- > updating UI? - switch to main thread
- >> ex: DispatchQueue.main.async { self.image = image }
+ *  MVC = "Does my View Controller need to know about this?"
+    >  basically if you see NO GREEN TEXT (ref's to props created in the VC) in the func, it can be refactored to another file.
+    >> the background color, border width, & corner radius of a container for an alert? No; Include in separate UIView
+    >> NSLayoutContstraints for the container? Yes.
+    >> if a refactored view was referenced in the OG func and is throwing an error once you move it, pass in the view using: func functionName(in view: UIView) { }
  
  --------------------------
  XXXXXXXXXXXXXXXXXXXXXXXX

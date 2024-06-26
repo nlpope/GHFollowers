@@ -38,6 +38,7 @@ class GFItemInfoSuperVC: UIViewController {
         configureActionButton()
     }
     
+    
     // the rounded, slighty gray background card the GFItemInfoViews are put into
     private func configureBackgroundView() {
         view.layer.cornerRadius = 18

@@ -210,9 +210,9 @@
 			isa = PBXGroup;
 			children = (
 				405EBE9B2C0906F600A46C5D /* UIViewController+Ext.swift */,
-				40B375462C2150F50009107A /* Date+Ext.swift */,
 				40C74B912C2A77F100D9AB2B /* UIView+Ext.swift */,
 				40B05EE12C2BE66900C06944 /* UITableView+Ext.swift */,
+				40B375462C2150F50009107A /* Date+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
