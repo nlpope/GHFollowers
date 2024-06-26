@@ -32,10 +32,10 @@ enum PersistenceManager {
                     }
                     
                     favorites.append(favorite)
-                
+                    
                 case .remove:
                     favorites.removeAll { $0.login == favorite.login }
-                
+                    
                 }
                 
                 //see note 9 in app delegate
@@ -47,7 +47,7 @@ enum PersistenceManager {
         }
     }
     
-    
+
     static func retrieveFavorites(completed: @escaping (Result<[Follower], GFError>) -> Void) {
         guard let favoritesData = defaults.object(forKey: Keys.favorites) as? Data else {
             completed(.success([]))

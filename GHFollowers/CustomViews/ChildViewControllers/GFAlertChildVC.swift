@@ -21,6 +21,7 @@ class GFAlertChildVC: UIViewController {
     
     let padding: CGFloat = 20
     
+    
     init(alertTitle: String, message: String, buttonTitle: String) {
         super.init(nibName: nil, bundle: nil)
         self.alertTitle  = alertTitle
@@ -28,9 +29,11 @@ class GFAlertChildVC: UIViewController {
         self.buttonTitle = buttonTitle
     }
     
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +48,7 @@ class GFAlertChildVC: UIViewController {
         configureMessageLabel()
         
     }
+    
     
     func configureContainerView() {
         NSLayoutConstraint.activate([

@@ -54,6 +54,100 @@
 					<key>type</key>
 					<string>bookmark</string>
 				</dict>
+				<dict>
+					<key>destination</key>
+					<dict>
+						<key>location-parameters</key>
+						<dict>
+							<key>EndingColumnNumber</key>
+							<string>0</string>
+							<key>EndingLineNumber</key>
+							<string>29</string>
+							<key>StartingColumnNumber</key>
+							<string>0</string>
+							<key>StartingLineNumber</key>
+							<string>28</string>
+							<key>Timestamp</key>
+							<string>741094684.738432</string>
+						</dict>
+						<key>rebasable-url</key>
+						<dict>
+							<key>base</key>
+							<string>workspace</string>
+							<key>payload</key>
+							<dict>
+								<key>relative-path</key>
+								<string>GHFollowers/CustomViews/Cells/FavoriteCell.swift</string>
+							</dict>
+						</dict>
+					</dict>
+					<key>text-context</key>
+					<dict>
+						<key>focused</key>
+						<string>        // see note 22 in app delegate
+</string>
+						<key>leading</key>
+						<string>    func set(favorite: Follower) {
+        usernameLabel.text = favorite.login
+</string>
+						<key>trailing</key>
+						<string>        avatarImageView.image = Images.placeholder
+        avatarImageView.downloadImage(fromURL: favorite.avatarUrl)
+    }
+</string>
+					</dict>
+					<key>title</key>
+					<string>favorite cell displaying wrong pics on first appearance</string>
+					<key>type</key>
+					<string>bookmark</string>
+				</dict>
+				<dict>
+					<key>destination</key>
+					<dict>
+						<key>location-parameters</key>
+						<dict>
+							<key>EndingColumnNumber</key>
+							<string>0</string>
+							<key>EndingLineNumber</key>
+							<string>320</string>
+							<key>StartingColumnNumber</key>
+							<string>0</string>
+							<key>StartingLineNumber</key>
+							<string>319</string>
+							<key>Timestamp</key>
+							<string>741100856.810371</string>
+						</dict>
+						<key>rebasable-url</key>
+						<dict>
+							<key>base</key>
+							<string>workspace</string>
+							<key>payload</key>
+							<dict>
+								<key>relative-path</key>
+								<string>GHFollowers/Support/AppDelegate.swift</string>
+							</dict>
+						</dict>
+					</dict>
+					<key>text-context</key>
+					<dict>
+						<key>focused</key>
+						<string> *  RETURN TO: revisit  iOS 15 - 17 update vids
+</string>
+						<key>leading</key>
+						<string>    &gt; 'let containerView = UIView( )' is unnecessary here, use the raw values like "layer" instead of prefacing with 'view' (UIViews have no access to 'view') - see GFButton
+ 
+</string>
+						<key>trailing</key>
+						<string>    &gt; barring 1st vids for 15 &amp; 17
+ 
+ --------------------------
+</string>
+					</dict>
+					<key>title</key>
+					<string>revisit  iOS 15 - 17 update vids</string>
+					<key>type</key>
+					<string>bookmark</string>
+				</dict>
 			</array>
 			<key>title</key>
 			<string>return to</string>
@@ -71,13 +165,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>239</string>
+							<string>249</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>238</string>
+							<string>248</string>
 							<key>Timestamp</key>
-							<string>741007183.493618</string>
+							<string>741099905.94469</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -118,13 +212,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>239</string>
+							<string>249</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>238</string>
+							<string>248</string>
 							<key>Timestamp</key>
-							<string>741007183.493373</string>
+							<string>741099905.944728</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -210,15 +304,15 @@
 						<key>location-parameters</key>
 						<dict>
 							<key>EndingColumnNumber</key>
-							<string>0</string>
+							<string>16</string>
 							<key>EndingLineNumber</key>
-							<string>112</string>
+							<string>103</string>
 							<key>StartingColumnNumber</key>
-							<string>0</string>
+							<string>16</string>
 							<key>StartingLineNumber</key>
-							<string>111</string>
+							<string>103</string>
 							<key>Timestamp</key>
-							<string>741007183.493557</string>
+							<string>741098730.701383</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -234,16 +328,15 @@
 					<key>text-context</key>
 					<dict>
 						<key>focused</key>
-						<string>                        // see note 17 in app delegate
-</string>
+						<string></string>
 						<key>leading</key>
-						<string>                    let message = "This user doesn't have any followers. Go follow them 😀."
-                    DispatchQueue.main.async {
-</string>
+						<string>            // see note 2 in app delegate
+            case .success(let followers):
+                updateUI(with: followers)</string>
 						<key>trailing</key>
-						<string>                        self.hideSearchController()
-                        self.showEmptyStateView(with: message, in: self.view)
-                    }
+						<string>
+                
+            case .failure(let error):
 </string>
 					</dict>
 					<key>title</key>

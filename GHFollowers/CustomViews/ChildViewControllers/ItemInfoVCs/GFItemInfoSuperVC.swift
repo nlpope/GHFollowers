@@ -60,14 +60,12 @@ class GFItemInfoSuperVC: UIViewController {
     }
     
     
-    // empty func, nothing in here for it to be overridden in subclasses
+    // see note 25 in app delegate
     @objc func actionButtonTapped() {}
     
     
     private func layoutUI() {
         view.addSubviews(stackView, actionButton)
-        //no need to add GFItemInfoView types to subview
-        //..already done in said UIView()
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         let padding: CGFloat = 20

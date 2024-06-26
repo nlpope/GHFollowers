@@ -76,7 +76,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
 }
 
 
@@ -111,6 +110,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  *  hide/reveal right pane = cmd + shift + 0
  *  hide/reveal preview window = cmd + shift + enter
  
+ *  source = see Stanford: https://www.youtube.com/watch?v=CRxHhx_pubY&list=PL3d_SFOiG7_8ofjyKzX6Nl1wZehbdiZC_&index=3&ab_channel=CS193P
+ 
  --------------------------
  XXXXXXXXXXXXXXXXXXXXXXXX
  XXXXXXXXXXXXXXXXXXXXXXXX
@@ -121,7 +122,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  *  Code formatting:
     > order = vars/lets, init methods, view lifecycle methods (VDL), funcs
     > 1 space after imports
-    > 1 space after class / struct / enum declarations
+    > 1 space BETWEEN class / struct / enum declarations
+    > 1 space AFTER class / struct / enum declarations
     > 2 spaces after vars just before methods
     > 2 spaces between funcs
     >> no spaces on 1st line after func declaration
@@ -145,11 +147,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  
  *  Human interface guidelines: https://developer.apple.com/design/human-interface-guidelines
  
- *  MVC = "Does my View Controller need to know about this?"
+ *  MVC = "Does my View Controller need to know about this?":
     >  basically if you see NO GREEN TEXT (ref's to props created in the VC) in the func, it can be refactored to another file.
     >> the background color, border width, & corner radius of a container for an alert? No; Include in separate UIView
     >> NSLayoutContstraints for the container? Yes.
     >> if a refactored view was referenced in the OG func and is throwing an error once you move it, pass in the view using: func functionName(in view: UIView) { }
+ 
+ *  Network calls:
+    > best to keep your .success, .failure & switch statement cases contained to 1-2 readable lines of code - factor out if need be. for example:
+    >>    case .success(let followers):
+        updateUI(with: followers)
+    >> NOTE: not always possible, if it's 4 lines & depends on a complex completion handler, so be it
+ 
+ *  Padding & constraints:
+    >  whatever your fontSize is set to, give your label 4 extra points of padding in the NSLayoutConstraints below it  to account for letters that dip below baseline (y, j, g, etc)
+
  
  --------------------------
  XXXXXXXXXXXXXXXXXXXXXXXX
@@ -286,6 +298,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     > SOLVE: setting the imageView in the favorite cell to Image.placeholder just before we download the image - This prevented me from seeing the old picture in the dequeued reusable cell (from old scrolls I'm assuming)
     > note that the cache that was implemented also helps with this when the image was already downloaded
  
+    > UPDATE: this solve was only temporary, as the problem is still persisting. Maybe move a certain func in the viewWillAppear lifecycle method?
+ 
  *  UserInfoVC
     23. this is where you can test the view containers before filling them with view by tinkering with the background colors. For example:
     > itemViewOneContainer.backgroundColor = .systemPink
@@ -295,7 +309,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     24. finish researching & implementing UIView.fitToSize( )
     > see 'iPhone SE - UserInfoVC Fixes' video
     >> Abdulaziz Alobaili's comment
-    
+ 
+ *  GFItemInfoSuperVC
+    25. If you have a func in a superclass that is meant to be overidden by its subclasses, there's no need to fill that function with a body
+ 
+ *  GFAlertContainerView
+    26. set up background, corner, border, autoresizing here (the UIView), then constraints in the view controller it's to be used in
+    > 'let containerView = UIView( )' is unnecessary here, use the raw values like "layer" instead of prefacing with 'view' (UIViews have no access to 'view') - see GFButton
+ 
+ *  RETURN TO: revisit  iOS 15 - 17 update vids
+    > barring 1st vids for 15 & 17
  
  --------------------------
  

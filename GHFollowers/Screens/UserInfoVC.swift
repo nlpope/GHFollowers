@@ -112,7 +112,6 @@ class UserInfoVC: GFDataLoadingVC {
     @objc func dismissVC() {
         dismiss(animated: true)
     }
-
 }
 
 
@@ -128,6 +127,7 @@ extension UserInfoVC: GFRepoItemChildVCDelegate, GFFollowerItemChildVCDelegate {
         presentSafariVC(with: url)        
     }
     
+    
     func didTapGitFollowers(for user: User) {
         guard user.followers != 0 else { 
             presentGFAlertOnMainThread(alertTitle: "No followers", message: "This user has no followers. What a shame 😞.", buttonTitle: "So sad")
@@ -137,6 +137,4 @@ extension UserInfoVC: GFRepoItemChildVCDelegate, GFFollowerItemChildVCDelegate {
         delegate.didRequestFollowers(for: user.login)
         dismissVC()
     }
-    
-    
 }

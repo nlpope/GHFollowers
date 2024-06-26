@@ -61,7 +61,4 @@ class GFEmptyStateView: UIView {
             logoImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 40)
         ])
     }
-    
-    
-    
 }

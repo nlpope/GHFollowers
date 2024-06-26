@@ -15,6 +15,7 @@ class GFFollowerItemChildVC: GFItemInfoSuperVC {
     
     weak var delegate: GFFollowerItemChildVCDelegate!
     
+    
     init(user: User, delegate: GFFollowerItemChildVCDelegate) {
         super.init(user: user)
         self.delegate = delegate
@@ -30,6 +31,7 @@ class GFFollowerItemChildVC: GFItemInfoSuperVC {
         super.viewDidLoad()
         configureItems()
     }
+    
     
     private func configureItems() {
         itemInfoViewOne.set(itemInfoType: .following, withCount: user.following)

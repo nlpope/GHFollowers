@@ -101,28 +101,33 @@ class FollowerListVC: GFDataLoadingVC {
             switch result {
             // see note 2 in app delegate
             case .success(let followers):
-                if followers.count < 100 { self.hasMoreFollowers = false }
-                self.followers.append(contentsOf: followers)
-                
-                // test empty state
-                // self.followers = []
-                if self.followers.isEmpty {
-                    let message = "This user doesn't have any followers. Go follow them 😀."
-                    DispatchQueue.main.async {
-                        // see note 17 in app delegate
-                        self.hideSearchController()
-                        self.showEmptyStateView(with: message, in: self.view)
-                    }
-                    return
-                }
-                
-                self.updateData(on: self.followers)
+                updateUI(with: followers)
                 
             case .failure(let error):
                 self.presentGFAlertOnMainThread(alertTitle: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")
             }
             self.isLoadingMoreFollowers = false
         }
+    }
+    
+    
+    func updateUI(with followers: [Follower]) {
+        if followers.count < 100 { self.hasMoreFollowers = false }
+        self.followers.append(contentsOf: followers)
+        
+        // test empty state
+        // self.followers = []
+        if self.followers.isEmpty {
+            let message = "This user doesn't have any followers. Go follow them 😀."
+            DispatchQueue.main.async {
+                // see note 17 in app delegate
+                self.hideSearchController()
+                self.showEmptyStateView(with: message, in: self.view)
+            }
+            return
+        }
+        
+        self.updateData(on: self.followers)
     }
     
     
@@ -155,23 +160,27 @@ class FollowerListVC: GFDataLoadingVC {
             
             switch result {
             case .success(let user):
-                let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
-                PersistenceManager.updateWith(favorite: favorite, actionType: .add) { [weak self] error in
-                    guard let self = self else { return }
-                    guard let error = error else {
-                        self.presentGFAlertOnMainThread(alertTitle: "Success!", message: "You have successfully favorited this user 🥳.", buttonTitle: "Hooray!")
-                        return
-                    }
-                    
-                    self.presentGFAlertOnMainThread(alertTitle: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
-                }
-                
+                addToFavorites(withUser: user)
                 
             case .failure(let error):
                 self.presentGFAlertOnMainThread(alertTitle: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
             }
         }
         
+    }
+    
+    
+    func addToFavorites(withUser user: User) {
+        let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
+        PersistenceManager.updateWith(favorite: favorite, actionType: .add) { [weak self] error in
+            guard let self = self else { return }
+            guard let error = error else {
+                self.presentGFAlertOnMainThread(alertTitle: "Success!", message: "You have successfully favorited this user 🥳.", buttonTitle: "Hooray!")
+                return
+            }
+            
+            self.presentGFAlertOnMainThread(alertTitle: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+        }
     }
     
     
@@ -189,6 +198,7 @@ class FollowerListVC: GFDataLoadingVC {
 
 //MARK: COLLECTIONVIEW DELEGATE METHODS
 extension FollowerListVC: UICollectionViewDelegate {
+    
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         let offsetY         = scrollView.contentOffset.y
         let contentHeight   = scrollView.contentSize.height
@@ -255,6 +265,7 @@ extension FollowerListVC: UserInfoVCDelegate {
         self.username   = username
         title           = username
         page            = 1
+        
         followers.removeAll()
         filteredFollowers.removeAll()
         // auto scroll collection view back to top
