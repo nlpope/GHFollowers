@@ -8,6 +8,7 @@
 import UIKit
 
 class NetworkManager {
+    
     static let shared           = NetworkManager()
     private let baseURL         = "https://api.github.com/users/"
     let cache                   = NSCache<NSString, UIImage>()
@@ -63,9 +64,7 @@ class NetworkManager {
         }
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            //handle error, response, and data in that order
             if let _ =  error {
-                //aka: "if the error exists"
                 completed(.failure(.unableToComplete))
                 return
             }
@@ -106,10 +105,6 @@ class NetworkManager {
         
         // see note 1 in app delegate
         guard let url = URL(string: urlString) else { return }
-        
-        /**
-         func dataTask( with url: URL, completionHandler: @escaping (Data?, URLResponse?, (any Error)?) -> Void ) -> URLSessionDataTask
-         */
         
         // Network Call - where the image is downloaded
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in

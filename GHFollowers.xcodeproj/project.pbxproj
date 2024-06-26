@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		40074C662C179C9600BEB1A4 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40074C652C179C9600BEB1A4 /* UserInfoVC.swift */; };
-		4035C8082C0D67E9002BE09C /* ErrorMessage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4035C8072C0D67E9002BE09C /* ErrorMessage+Utils.swift */; };
+		4035C8082C0D67E9002BE09C /* GFError+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4035C8072C0D67E9002BE09C /* GFError+Utils.swift */; };
 		4035C80B2C0D73CD002BE09C /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4035C80A2C0D73CC002BE09C /* FollowerCell.swift */; };
 		4035C80D2C0D754B002BE09C /* GFAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4035C80C2C0D754B002BE09C /* GFAvatarImageView.swift */; };
 		4035C80F2C102836002BE09C /* UIHelper+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4035C80E2C102836002BE09C /* UIHelper+Utils.swift */; };
@@ -51,7 +51,7 @@
 
 /* Begin PBXFileReference section */
 		40074C652C179C9600BEB1A4 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
-		4035C8072C0D67E9002BE09C /* ErrorMessage+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ErrorMessage+Utils.swift"; sourceTree = "<group>"; };
+		4035C8072C0D67E9002BE09C /* GFError+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GFError+Utils.swift"; sourceTree = "<group>"; };
 		4035C80A2C0D73CC002BE09C /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
 		4035C80C2C0D754B002BE09C /* GFAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAvatarImageView.swift; sourceTree = "<group>"; };
 		4035C80E2C102836002BE09C /* UIHelper+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIHelper+Utils.swift"; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 		4035C8062C0D6790002BE09C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				4035C8072C0D67E9002BE09C /* ErrorMessage+Utils.swift */,
+				4035C8072C0D67E9002BE09C /* GFError+Utils.swift */,
 				40BD42352C1CC3BB00CE5C55 /* Constants+Utils.swift */,
 				4035C80E2C102836002BE09C /* UIHelper+Utils.swift */,
 				40B0F8B62C2531250037A378 /* UIResponder+Utils.swift */,
@@ -209,8 +209,8 @@
 		405EBE9E2C090CF600A46C5D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				40B375462C2150F50009107A /* Date+Ext.swift */,
 				405EBE9B2C0906F600A46C5D /* UIViewController+Ext.swift */,
+				40B375462C2150F50009107A /* Date+Ext.swift */,
 				40C74B912C2A77F100D9AB2B /* UIView+Ext.swift */,
 				40B05EE12C2BE66900C06944 /* UITableView+Ext.swift */,
 			);
@@ -377,7 +377,7 @@
 				40C676F72C018006006B64F8 /* SearchVC.swift in Sources */,
 				406889D02C19EF2A0064DA4C /* GFUserInfoHeaderChildVC.swift in Sources */,
 				40BAB56E2C2316CF001FF714 /* PersistenceManager.swift in Sources */,
-				4035C8082C0D67E9002BE09C /* ErrorMessage+Utils.swift in Sources */,
+				4035C8082C0D67E9002BE09C /* GFError+Utils.swift in Sources */,
 				40BD42362C1CC3BB00CE5C55 /* Constants+Utils.swift in Sources */,
 				40AFCC102C0A86CF00A60EE7 /* User.swift in Sources */,
 				40C74B922C2A77F100D9AB2B /* UIView+Ext.swift in Sources */,

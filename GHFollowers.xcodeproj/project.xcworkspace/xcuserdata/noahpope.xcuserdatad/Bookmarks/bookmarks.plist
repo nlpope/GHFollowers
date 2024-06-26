@@ -15,98 +15,6 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>13</string>
-							<key>StartingColumnNumber</key>
-							<string>0</string>
-							<key>StartingLineNumber</key>
-							<string>12</string>
-							<key>Timestamp</key>
-							<string>738717119.285651</string>
-						</dict>
-						<key>rebasable-url</key>
-						<dict>
-							<key>base</key>
-							<string>workspace</string>
-							<key>payload</key>
-							<dict>
-								<key>relative-path</key>
-								<string>GHFollowers/GFAlertVC.swift</string>
-							</dict>
-						</dict>
-					</dict>
-					<key>text-context</key>
-					<dict>
-						<key>focused</key>
-						<string>    let containerView = GFAlertContainerView()
-</string>
-						<key>leading</key>
-						<string>    
-    
-</string>
-						<key>trailing</key>
-						<string>    let titleLabel    = GFTitleLabel(textAlignment: .center, fontSize: 20)
-    let messageLabel  = GFBodyLabel(textAlignment: .center)
-    let actionButton  = GFButton(backgroundColor: .systemPink, title: "ok")
-</string>
-					</dict>
-					<key>title</key>
-					<string>create re-usable alert container UIView</string>
-					<key>type</key>
-					<string>bookmark</string>
-				</dict>
-				<dict>
-					<key>destination</key>
-					<dict>
-						<key>location-parameters</key>
-						<dict>
-							<key>EndingColumnNumber</key>
-							<string>0</string>
-							<key>EndingLineNumber</key>
-							<string>37</string>
-							<key>StartingColumnNumber</key>
-							<string>0</string>
-							<key>StartingLineNumber</key>
-							<string>36</string>
-							<key>Timestamp</key>
-							<string>738624343.517473</string>
-						</dict>
-						<key>rebasable-url</key>
-						<dict>
-							<key>base</key>
-							<string>workspace</string>
-							<key>payload</key>
-							<dict>
-								<key>relative-path</key>
-								<string>GHFollowers/Controllers/SearchVC.swift</string>
-							</dict>
-						</dict>
-					</dict>
-					<key>text-context</key>
-					<dict>
-						<key>focused</key>
-						<string>    func createDismissKeyboardTapGesture() {
-</string>
-						<key>leading</key>
-						<string>    //MARK: FUNCTIONS
-    
-</string>
-						<key>trailing</key>
-						<string>        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
-        view.addGestureRecognizer(tap)
-    }
-</string>
-					</dict>
-					<key>type</key>
-					<string>bookmark</string>
-				</dict>
-				<dict>
-					<key>destination</key>
-					<dict>
-						<key>location-parameters</key>
-						<dict>
-							<key>EndingColumnNumber</key>
-							<string>0</string>
-							<key>EndingLineNumber</key>
 							<string>10</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
@@ -148,7 +56,7 @@
 				</dict>
 			</array>
 			<key>title</key>
-			<string>to do</string>
+			<string>return to</string>
 			<key>type</key>
 			<string>group</string>
 		</dict>
@@ -340,6 +248,53 @@
 					</dict>
 					<key>title</key>
 					<string>weak self &amp; DispatchQueue</string>
+					<key>type</key>
+					<string>bookmark</string>
+				</dict>
+				<dict>
+					<key>destination</key>
+					<dict>
+						<key>location-parameters</key>
+						<dict>
+							<key>EndingColumnNumber</key>
+							<string>0</string>
+							<key>EndingLineNumber</key>
+							<string>31</string>
+							<key>StartingColumnNumber</key>
+							<string>0</string>
+							<key>StartingLineNumber</key>
+							<string>30</string>
+							<key>Timestamp</key>
+							<string>741091685.0594209</string>
+						</dict>
+						<key>rebasable-url</key>
+						<dict>
+							<key>base</key>
+							<string>workspace</string>
+							<key>payload</key>
+							<dict>
+								<key>relative-path</key>
+								<string>GHFollowers/Extensions/UIViewController+Ext.swift</string>
+							</dict>
+						</dict>
+					</dict>
+					<key>text-context</key>
+					<dict>
+						<key>focused</key>
+						<string>    // MARK: SOLVE FOR KEYBOARD BLOCKING FIELD
+</string>
+						<key>leading</key>
+						<string>    
+    
+</string>
+						<key>trailing</key>
+						<string>    func setupKeyboardHiding() {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+</string>
+					</dict>
+					<key>title</key>
+					<string>solve for keyboard blocking field</string>
 					<key>type</key>
 					<string>bookmark</string>
 				</dict>
