@@ -12,9 +12,12 @@ class GFTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UITabBar.appearance().tintColor = .systemGreen
-        viewControllers                 = [createSearchNC(), createFavoritesNC()]
+        setUpVCs()
         setupKeyboardHiding()
     }
+    
+    
+    func setUpVCs() { viewControllers = [createSearchNC(), createFavoritesNC()] }
     
     
     func createSearchNC() -> UINavigationController {
