@@ -123,6 +123,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  *  App Icons & Image sets:
     >  https://www.appicon.co/#app-icon
     >  https://www.appicon.co/#image-sets
+    >> mind light & dark views: https://developer.apple.com/documentation/uikit/uiimage/providing_images_for_different_appearances
  
   *  Code formatting:
   > order = vars/lets, init methods, view lifecycle methods (VDL), funcs
