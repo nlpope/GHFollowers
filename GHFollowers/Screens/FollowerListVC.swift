@@ -166,7 +166,6 @@ class FollowerListVC: GFDataLoadingVC {
                 self.presentGFAlertOnMainThread(alertTitle: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
             }
         }
-        
     }
     
     

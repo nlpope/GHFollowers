@@ -109,13 +109,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>320</string>
+							<string>422</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>319</string>
+							<string>421</string>
 							<key>Timestamp</key>
-							<string>741100856.810371</string>
+							<string>741573178.78738</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -134,7 +134,7 @@
 						<string> *  RETURN TO: revisit  iOS 15 - 17 update vids
 </string>
 						<key>leading</key>
-						<string>    &gt; 'let containerView = UIView( )' is unnecessary here, use the raw values like "layer" instead of prefacing with 'view' (UIViews have no access to 'view') - see GFButton
+						<string>    &gt; 'let containerView = UIView( )' is unnecessary here, use the raw values like "layer" instead of prefacing with 'view' (because you're already in the 'view') - see GFButton
  
 </string>
 						<key>trailing</key>
@@ -165,13 +165,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>249</string>
+							<string>248</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>248</string>
+							<string>247</string>
 							<key>Timestamp</key>
-							<string>741099905.94469</string>
+							<string>741552399.348121</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -212,13 +212,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>249</string>
+							<string>248</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>248</string>
+							<string>247</string>
 							<key>Timestamp</key>
-							<string>741099905.944728</string>
+							<string>741552399.3481801</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -332,9 +332,9 @@
 						<key>leading</key>
 						<string>            // see note 2 in app delegate
             case .success(let followers):
-                updateUI(with: followers)</string>
+                </string>
 						<key>trailing</key>
-						<string>
+						<string>updateUI(with: followers)
                 
             case .failure(let error):
 </string>
@@ -387,7 +387,7 @@
 </string>
 					</dict>
 					<key>title</key>
-					<string>solve for keyboard blocking field</string>
+					<string>solve for keyboard hiding / blocking field</string>
 					<key>type</key>
 					<string>bookmark</string>
 				</dict>
