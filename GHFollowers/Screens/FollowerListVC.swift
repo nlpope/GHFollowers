@@ -22,9 +22,9 @@ class FollowerListVC: GFDataLoadingVC {
     var isSearching                     = false
     var isLoadingMoreFollowers          = false
     
-    
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
+    
     
     init(username: String) {
         super.init(nibName: nil, bundle: nil)

@@ -7,6 +7,7 @@
 
 import UIKit
 
+// see note 28 in app delegate
 class SearchVC: UIViewController {
     
     let logoImageView      = UIImageView()

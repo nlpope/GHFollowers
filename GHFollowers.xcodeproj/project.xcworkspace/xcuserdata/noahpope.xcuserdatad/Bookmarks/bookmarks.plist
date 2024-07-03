@@ -109,13 +109,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>329</string>
+							<string>335</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>328</string>
+							<string>334</string>
 							<key>Timestamp</key>
-							<string>741725570.0478441</string>
+							<string>741727838.5524549</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -134,7 +134,7 @@
 						<string> *  RETURN TO: revisit  iOS 15 - 17 update vids
 </string>
 						<key>leading</key>
-						<string>    &gt; why else would both the width AND height anchor be set so specifically in the FavoriteCell?
+						<string>    &gt; closes/dismisses the window
  
 </string>
 						<key>trailing</key>
@@ -171,7 +171,7 @@
 							<key>StartingLineNumber</key>
 							<string>247</string>
 							<key>Timestamp</key>
-							<string>741552399.348121</string>
+							<string>741727241.005856</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -218,7 +218,7 @@
 							<key>StartingLineNumber</key>
 							<string>247</string>
 							<key>Timestamp</key>
-							<string>741552399.3481801</string>
+							<string>741727241.0059021</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -304,15 +304,15 @@
 						<key>location-parameters</key>
 						<dict>
 							<key>EndingColumnNumber</key>
-							<string>16</string>
+							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>103</string>
+							<string>104</string>
 							<key>StartingColumnNumber</key>
-							<string>16</string>
+							<string>0</string>
 							<key>StartingLineNumber</key>
 							<string>103</string>
 							<key>Timestamp</key>
-							<string>741098730.701383</string>
+							<string>741727241.0059201</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -328,15 +328,16 @@
 					<key>text-context</key>
 					<dict>
 						<key>focused</key>
-						<string></string>
+						<string>                updateUI(with: followers)
+</string>
 						<key>leading</key>
 						<string>            // see note 2 in app delegate
             case .success(let followers):
-                </string>
+</string>
 						<key>trailing</key>
-						<string>updateUI(with: followers)
-                
+						<string>                
             case .failure(let error):
+                self.presentGFAlertOnMainThread(alertTitle: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")
 </string>
 					</dict>
 					<key>title</key>

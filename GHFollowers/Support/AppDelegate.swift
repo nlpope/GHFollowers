@@ -326,6 +326,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     27.  I think the absence of a widthAnchor in the avatarImageView's constraints is due to the diff. datasource collectionView setting that value automatically as the table populates with the cells you provide
     > why else would both the width AND height anchor be set so specifically in the FavoriteCell?
  
+ *  SearchVC
+    28. Unlike views (which handle THE LOOK), view controllers handle THE BEHAVIOR. It:
+    > initializes data inside the View
+    > cannot display anything, only decide WHAT gets displayed to then send it off to the UIView for set up
+    > closes/dismisses the window
+ 
  *  RETURN TO: revisit  iOS 15 - 17 update vids
     > barring 1st vids for 15 & 17
  
