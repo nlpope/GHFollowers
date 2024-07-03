@@ -322,8 +322,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     26. set up background, corner, border, autoresizing here (the UIView), then constraints in the view controller it's to be used in
     > 'let containerView = UIView( )' is unnecessary here, use the raw values like "layer" instead of prefacing with 'view' (because you're already in the 'view') - see GFButton
  
+ *  FollowerCell > configure( )
+    27.  I think the absence of a widthAnchor in the avatarImageView's constraints is due to the diff. datasource collectionView setting that value automatically as the table populates with the cells you provide
+    > why else would both the width AND height anchor be set so specifically in the FavoriteCell?
+ 
  *  RETURN TO: revisit  iOS 15 - 17 update vids
     > barring 1st vids for 15 & 17
+ 
+
  
  --------------------------
  

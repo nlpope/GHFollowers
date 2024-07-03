@@ -109,13 +109,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>325</string>
+							<string>329</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>324</string>
+							<string>328</string>
 							<key>Timestamp</key>
-							<string>741573824.588791</string>
+							<string>741725570.0478441</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -134,13 +134,13 @@
 						<string> *  RETURN TO: revisit  iOS 15 - 17 update vids
 </string>
 						<key>leading</key>
-						<string>    &gt; 'let containerView = UIView( )' is unnecessary here, use the raw values like "layer" instead of prefacing with 'view' (because you're already in the 'view') - see GFButton
+						<string>    &gt; why else would both the width AND height anchor be set so specifically in the FavoriteCell?
  
 </string>
 						<key>trailing</key>
 						<string>    &gt; barring 1st vids for 15 &amp; 17
  
- --------------------------
+
 </string>
 					</dict>
 					<key>title</key>
