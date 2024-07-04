@@ -311,7 +311,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     > itemViewTwoContainer.backgroundColor = .systemBlue
  
  *  UserInfoVC
-    24. finish researching & implementing UIView.fitToSize( )
+    ----------------------------------------
+    24a. a good way to remember delegates & protocols:
+ 
+    SPEAKER: "A VC WILL LISTEN TO ME WHEN I SPEAK"
+ 
+    protocol UserInfoVCDelegate: AnyObject {
+        "... AND THEY WILL REQUEST THIS"
+        func didRequestFollowers(for username: String)
+    }
+    ----------------------------------------
+    LISTENER: "I WILL LISTEN TO THE SPEAKER FOR WHAT TO DISPLAY,  AS I VARY DEPENDING ON THEM"
+ 
+    extension FollowerListVC: UserInfoVCDelegate { ... }
+    ----------------------------------------
+    24b. finish researching & implementing UIView.fitToSize( )
     > see 'iPhone SE - UserInfoVC Fixes' video
     >> Abdulaziz Alobaili's comment
  

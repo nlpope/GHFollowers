@@ -37,7 +37,7 @@
 					<key>text-context</key>
 					<dict>
 						<key>focused</key>
-						<string>// see note 24 in app delegate
+						<string>// see notes 24a &amp; 24b in app delegate
 </string>
 						<key>leading</key>
 						<string>import UIKit
@@ -109,13 +109,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>335</string>
+							<string>349</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>334</string>
+							<string>348</string>
 							<key>Timestamp</key>
-							<string>741727838.5524549</string>
+							<string>741747639.765022</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>

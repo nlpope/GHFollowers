@@ -7,7 +7,7 @@
 
 import UIKit
 
-// see note 24 in app delegate
+// see notes 24a & 24b in app delegate
 protocol UserInfoVCDelegate: AnyObject {
     func didRequestFollowers(for username: String)
 }
