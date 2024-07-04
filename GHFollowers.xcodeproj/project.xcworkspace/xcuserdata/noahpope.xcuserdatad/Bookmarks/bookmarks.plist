@@ -165,13 +165,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>248</string>
+							<string>249</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>247</string>
+							<string>248</string>
 							<key>Timestamp</key>
-							<string>741727241.005856</string>
+							<string>741752250.099185</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -195,8 +195,8 @@
 </string>
 						<key>trailing</key>
 						<string>        if searchText == "" {
-            print("dismiss the searchbar")
             // see note 19 in app delegate
+            searchBar.resignFirstResponder()
 </string>
 					</dict>
 					<key>title</key>
@@ -212,13 +212,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>248</string>
+							<string>249</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>247</string>
+							<string>248</string>
 							<key>Timestamp</key>
-							<string>741727241.0059021</string>
+							<string>741752250.099508</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -242,8 +242,8 @@
 </string>
 						<key>trailing</key>
 						<string>        if searchText == "" {
-            print("dismiss the searchbar")
             // see note 19 in app delegate
+            searchBar.resignFirstResponder()
 </string>
 					</dict>
 					<key>title</key>
@@ -306,13 +306,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>104</string>
+							<string>105</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>103</string>
+							<string>104</string>
 							<key>Timestamp</key>
-							<string>741727241.0059201</string>
+							<string>741751517.0420099</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>

@@ -71,6 +71,7 @@ class FollowerListVC: GFDataLoadingVC {
         mySearchController.searchBar.delegate                   = self
         mySearchController.searchBar.placeholder                = "Search for a username"
         mySearchController.obscuresBackgroundDuringPresentation = false
+        
         navigationItem.searchController                         = mySearchController
         navigationItem.hidesSearchBarWhenScrolling              = false
     }
@@ -110,7 +111,7 @@ class FollowerListVC: GFDataLoadingVC {
         }
     }
     
-    
+#warning("return to")
     func updateUI(with followers: [Follower]) {
         if followers.count < 100 { self.hasMoreFollowers = false }
         self.followers.append(contentsOf: followers)
@@ -130,7 +131,7 @@ class FollowerListVC: GFDataLoadingVC {
         self.updateData(on: self.followers)
     }
     
-    
+    #warning("return to")
     func configureDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, follower) -> UICollectionViewCell? in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.reuseID, for: indexPath) as! FollowerCell
@@ -233,8 +234,8 @@ extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
         guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
         
-        isSearching = true
-        filteredFollowers = followers.filter { $0.login.lowercased().contains(filter.lowercased()) }
+        isSearching         = true
+        filteredFollowers   = followers.filter { $0.login.lowercased().contains(filter.lowercased()) }
         updateData(on: filteredFollowers)
     }
     
@@ -247,7 +248,6 @@ extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText == "" {
-            print("dismiss the searchbar")
             // see note 19 in app delegate
             searchBar.resignFirstResponder()
             isSearching = false
