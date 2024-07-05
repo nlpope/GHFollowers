@@ -15,7 +15,7 @@ class GFButton: UIButton {
     }
     
     
-    //initializer for storyboards (which we arent using)
+    // initializer for storyboards (which we arent using)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -36,7 +36,7 @@ class GFButton: UIButton {
     }
     
     
-    //present in init method, but included in case 'on the fly' changes need to be made
+    // present in conven. init, but included in case 'on the fly' changes need to be made
     func set(backgroundColor: UIColor, title: String) {
         self.backgroundColor = backgroundColor
         setTitle(title, for: .normal)

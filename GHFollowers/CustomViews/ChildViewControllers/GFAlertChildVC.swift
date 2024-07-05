@@ -61,7 +61,7 @@ class GFAlertChildVC: UIViewController {
     
     
     func configureTitleLabel() {
-        //for if alertTitle's custom init isn't used & it comes up nil
+        // for if alertTitle's custom init isn't used & it comes up nil
         titleLabel.text = alertTitle ?? "Something went wrong"
         
         NSLayoutConstraint.activate([

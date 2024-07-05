@@ -111,7 +111,7 @@ class FollowerListVC: GFDataLoadingVC {
         }
     }
     
-#warning("return to")
+    
     func updateUI(with followers: [Follower]) {
         if followers.count < 100 { self.hasMoreFollowers = false }
         self.followers.append(contentsOf: followers)
@@ -127,11 +127,10 @@ class FollowerListVC: GFDataLoadingVC {
             }
             return
         }
-        
         self.updateData(on: self.followers)
     }
     
-    #warning("return to")
+    
     func configureDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, follower) -> UICollectionViewCell? in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.reuseID, for: indexPath) as! FollowerCell
@@ -212,6 +211,7 @@ extension FollowerListVC: UICollectionViewDelegate {
     }
     
     
+    #warning("return to")
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // pass login onto userinfoVC
         // present userinfoVC
@@ -257,7 +257,7 @@ extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
 }
 
 
-// MARK: FOLLOWERLIST DELEGATE METHODS
+// MARK: USERINFOVC DELEGATE METHODS
 extension FollowerListVC: UserInfoVCDelegate {
     
     func didRequestFollowers(for username: String) {
