@@ -131,6 +131,15 @@ class FollowerListVC: GFDataLoadingVC {
     }
     
     
+    func updateData(on followers: [Follower]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(followers)
+        DispatchQueue.main.async {self.dataSource.apply(snapshot, animatingDifferences: true)}
+        
+    }
+    
+    
     func configureDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, follower) -> UICollectionViewCell? in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.reuseID, for: indexPath) as! FollowerCell
@@ -138,15 +147,6 @@ class FollowerListVC: GFDataLoadingVC {
             
             return cell
         })
-    }
-    
-    
-    func updateData(on followers: [Follower]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(followers)
-        DispatchQueue.main.async {self.dataSource.apply(snapshot, animatingDifferences: true)}
-        
     }
     
     

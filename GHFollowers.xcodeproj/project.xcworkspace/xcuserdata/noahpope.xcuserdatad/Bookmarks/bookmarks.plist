@@ -171,7 +171,7 @@
 							<key>StartingLineNumber</key>
 							<string>248</string>
 							<key>Timestamp</key>
-							<string>741847478.460664</string>
+							<string>741892750.9728431</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -218,7 +218,7 @@
 							<key>StartingLineNumber</key>
 							<string>248</string>
 							<key>Timestamp</key>
-							<string>741847478.46073</string>
+							<string>741892750.972895</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -285,7 +285,7 @@
 </string>
 						<key>leading</key>
 						<string>    
-    //this hasher turns the login into a UUID for the diffable datasource
+    // this hasher turns the login into a UUID for the diffable datasource
 </string>
 						<key>trailing</key>
 						<string>        hasher.combine(login)

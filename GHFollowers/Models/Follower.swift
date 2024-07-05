@@ -9,12 +9,12 @@
 import Foundation
 
 struct Follower: Codable, Hashable {
-    //camel case allowed for Codable's conversion to snake_case @ call site
+    // camel case allowed for Codable's conversion to snake_case @ call site
     var login: String
     var avatarUrl: String
     
     
-    //this hasher turns the login into a UUID for the diffable datasource
+    // this hasher turns the login into a UUID for the diffable datasource
     func hash(into hasher: inout Hasher) {
         hasher.combine(login)
     }
