@@ -109,13 +109,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>349</string>
+							<string>353</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>348</string>
+							<string>352</string>
 							<key>Timestamp</key>
-							<string>741747639.765022</string>
+							<string>741924997.227921</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -134,7 +134,7 @@
 						<string> *  RETURN TO: revisit  iOS 15 - 17 update vids
 </string>
 						<key>leading</key>
-						<string>    &gt; closes/dismisses the window
+						<string>    &gt; best to load the API's info before calling this so the 'cell.count' &amp; 'cellForRowAt' info is accurate
  
 </string>
 						<key>trailing</key>
@@ -165,13 +165,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>249</string>
+							<string>251</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>248</string>
+							<string>250</string>
 							<key>Timestamp</key>
-							<string>741892750.9728431</string>
+							<string>741925054.1211981</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -212,13 +212,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>249</string>
+							<string>251</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>248</string>
+							<string>250</string>
 							<key>Timestamp</key>
-							<string>741892750.972895</string>
+							<string>741925054.121184</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>
@@ -306,13 +306,13 @@
 							<key>EndingColumnNumber</key>
 							<string>0</string>
 							<key>EndingLineNumber</key>
-							<string>105</string>
+							<string>117</string>
 							<key>StartingColumnNumber</key>
 							<string>0</string>
 							<key>StartingLineNumber</key>
-							<string>104</string>
+							<string>116</string>
 							<key>Timestamp</key>
-							<string>741751517.0420099</string>
+							<string>741925054.121146</string>
 						</dict>
 						<key>rebasable-url</key>
 						<dict>

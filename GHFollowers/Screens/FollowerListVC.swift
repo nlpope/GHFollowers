@@ -11,7 +11,7 @@ import UIKit
 
 class FollowerListVC: GFDataLoadingVC {
     
-    //for UICollectionViewDiffableDataSource
+    // for UICollectionViewDiffableDataSource
     enum Section { case main }
 
     var username: String!
@@ -90,6 +90,17 @@ class FollowerListVC: GFDataLoadingVC {
         collectionView.backgroundColor  = .systemBackground
         collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
     }
+    
+    
+    // see note 29 in app delegate
+    func configureDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, follower) -> UICollectionViewCell? in
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.reuseID, for: indexPath) as! FollowerCell
+            cell.set(follower: follower)
+            
+            return cell
+        })
+    }
    
     
     func getFollowers(username: String, page: Int) {
@@ -137,16 +148,6 @@ class FollowerListVC: GFDataLoadingVC {
         snapshot.appendItems(followers)
         DispatchQueue.main.async {self.dataSource.apply(snapshot, animatingDifferences: true)}
         
-    }
-    
-    
-    func configureDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, follower) -> UICollectionViewCell? in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.reuseID, for: indexPath) as! FollowerCell
-            cell.set(follower: follower)
-            
-            return cell
-        })
     }
     
     

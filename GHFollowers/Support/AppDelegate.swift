@@ -346,6 +346,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     > cannot display anything, only decide WHAT gets displayed to then send it off to the UIView for set up
     > closes/dismisses the window
  
+ *  FollowerListVC
+    29. Takes the place of the old datasource method that would accompany the delegate methods in an extension @ the bottom - you'd set it up in almost the same way
+    > best to load the API's info before calling this so the 'cell.count' & 'cellForRowAt' info is accurate
+ 
  *  RETURN TO: revisit  iOS 15 - 17 update vids
     > barring 1st vids for 15 & 17
  
