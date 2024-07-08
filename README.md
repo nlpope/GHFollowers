@@ -32,6 +32,9 @@ GHFollowers uses Swift's new diffable datasource to sift through a user's follow
 GHFollowers now uses a 'UI lift' method to dynamically account for screen size differences that cause the keyboard to block a textfield 
   > this is done as an alternative to Sean Allen's more verbose, hard-coded method
 
+As it was originally designed, the app had no way of getting back to the User info (the card preceding what you see before you hit 'Get Followers')
+  > For this, I've added a navigation path back to the User Info card from the Follower List via a small icon above next to the 'add' button.
+
 ## Built With
 
 * Swift
