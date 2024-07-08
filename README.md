@@ -42,7 +42,7 @@ As it was originally designed, the app had no way of getting back to the User in
 
 ## Authors
 
-Noah Pope (assisted by Sean Allen)
+* **Noah Pope (assisted by Sean Allen)**
 
 
 ## License
