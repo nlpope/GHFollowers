@@ -16,19 +16,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //best to keep this func clean & uncluttered..
         //which is why I moved the tabBar & NavC creations into sep. funcs below
         
-        guard let windowScene = (scene as? UIWindowScene) else { return }
+        guard let windowScene       = (scene as? UIWindowScene) else { return }
         
-        window                     = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        window?.windowScene        = windowScene
-        window?.rootViewController = GFTabBarController()
+        window                      = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene         = windowScene
+        window?.rootViewController  = GFTabBarController()
         window?.makeKeyAndVisible()
         
         configureNavigationBar()
     }
     
-    
-   
-
     
     func configureNavigationBar() {
         UINavigationBar.appearance().tintColor = .systemGreen
