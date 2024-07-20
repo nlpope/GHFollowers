@@ -11,10 +11,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
+    // full process: https://medium.com/@yatimistark/removing-storyboard-from-app-xcode-14-swift-5-2c707deb858
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        //best to keep this func clean & uncluttered..
-        //which is why I moved the tabBar & NavC creations into sep. funcs below
         
         guard let windowScene       = (scene as? UIWindowScene) else { return }
         

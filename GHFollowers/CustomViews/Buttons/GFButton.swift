@@ -15,7 +15,7 @@ class GFButton: UIButton {
     }
     
     
-    // initializer for storyboards (which we arent using)
+    //  initializer for storyboards (which we arent using)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
