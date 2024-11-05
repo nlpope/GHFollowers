@@ -28,7 +28,7 @@ extension UIViewController {
     }
     
     
-    // MARK: SOLVE FOR KEYBOARD BLOCKING FIELD
+    // MARK: SOLVE FOR KEYBOARD BLOCKING TEXTFIELD
     func setupKeyboardHiding() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         
