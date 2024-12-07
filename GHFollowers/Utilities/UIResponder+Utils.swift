@@ -10,14 +10,13 @@ import UIKit
 extension UIResponder {
     
     // MARK: KEYBOARD
-    
-    // see note 14 in app delegate
     private struct Static {
         static weak var responder: UIResponder?
     }
     
     
-    static func currentResponder() -> UIResponder? {
+    // determines which element onscreen triggered the keyboard
+    static func currentFirst() -> UIResponder? {
         Static.responder = nil
         UIApplication.shared.sendAction(#selector(UIResponder._trap), to: nil, from: nil, for: nil)
         return Static.responder

@@ -375,7 +375,7 @@
 					<key>text-context</key>
 					<dict>
 						<key>focused</key>
-						<string>    // MARK: SOLVE FOR KEYBOARD BLOCKING FIELD
+						<string>    // MARK: SOLVE FOR KEYBOARD BLOCKING TEXTFIELD
 </string>
 						<key>leading</key>
 						<string>    
