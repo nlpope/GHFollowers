@@ -16,9 +16,12 @@ extension UIResponder {
     
     
     // determines which element onscreen triggered the keyboard
-    static func currentFirst() -> UIResponder? {
+    static func currentResponder() -> UIResponder? {
         Static.responder = nil
-        UIApplication.shared.sendAction(#selector(UIResponder._trap), to: nil, from: nil, for: nil)
+        UIApplication.shared.sendAction(#selector(UIResponder._trap),
+                                        to: nil,
+                                        from: nil,
+                                        for: nil)
         return Static.responder
     }
     
