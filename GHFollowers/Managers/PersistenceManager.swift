@@ -26,10 +26,8 @@ enum PersistenceManager {
                 
                 switch actionType {
                 case .add:
-                    guard !favorites.contains(favorite) else {
-                        completed(.alreadyInFavorites)
-                        return
-                    }
+                    guard !favorites.contains(favorite)
+                    else { completed(.alreadyInFavorites); return }
                     
                     favorites.append(favorite)
                     
@@ -49,10 +47,8 @@ enum PersistenceManager {
     
 
     static func retrieveFavorites(completed: @escaping (Result<[Follower], GFError>) -> Void) {
-        guard let favoritesData = defaults.object(forKey: Keys.favorites) as? Data else {
-            completed(.success([]))
-            return
-        }
+        guard let favoritesData = defaults.object(forKey: Keys.favorites) as? Data
+        else { completed(.success([])); return }
         
         do {
             let decoder     = JSONDecoder()
