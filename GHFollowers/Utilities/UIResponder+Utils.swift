@@ -8,9 +8,7 @@
 import UIKit
 
 extension UIResponder
-{
-    
-    // MARK: KEYBOARD
+{    
     private struct Static
     {
         static weak var responder: UIResponder?
