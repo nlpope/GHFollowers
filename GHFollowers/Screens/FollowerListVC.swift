@@ -122,7 +122,10 @@ class FollowerListVC: GFDataLoadingVC {
         }
     }
     
-    
+    // NOT NEEDED FOR NOTES APP MILESTONE
+    // 1st in list before updateData is used - why?
+    // b/c this is where the source list gets new followers appended to it before
+    // updateData (the reflection for the source) can implement the animations/updates
     func updateUI(with followers: [Follower]) {
         if followers.count < 100 { self.hasMoreFollowers = false }
         self.followers.append(contentsOf: followers)

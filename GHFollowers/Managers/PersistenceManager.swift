@@ -19,7 +19,7 @@ enum PersistenceManager {
     enum Keys { static let favorites = "favorites" }
     
     
-    static func updateWith(favorite: Follower, actionType: PersistenceActionType, completed: @escaping (GFError?) -> Void) {
+    static func updateWith(favorite: Follower, actionType: PersistenceActionType, completed: @escaping (GFError?) -> Void) -> Void {
         retrieveFavorites { result in
             switch result {
             case .success(var favorites):
@@ -33,7 +33,6 @@ enum PersistenceManager {
                     
                 case .remove:
                     favorites.removeAll { $0.login == favorite.login }
-                    
                 }
                 
                 //see note 9 in app delegate

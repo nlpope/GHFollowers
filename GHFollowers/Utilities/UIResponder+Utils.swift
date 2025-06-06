@@ -7,16 +7,19 @@
 
 import UIKit
 
-extension UIResponder {
+extension UIResponder
+{
     
     // MARK: KEYBOARD
-    private struct Static {
+    private struct Static
+    {
         static weak var responder: UIResponder?
     }
     
     
     // determines which element onscreen triggered the keyboard
-    static func currentResponder() -> UIResponder? {
+    static func currentResponder() -> UIResponder?
+    {
         Static.responder = nil
         UIApplication.shared.sendAction(#selector(UIResponder._trap),
                                         to: nil,
@@ -26,7 +29,5 @@ extension UIResponder {
     }
     
     
-    @objc private func _trap() {
-        Static.responder = self
-    }
+    @objc private func _trap() { Static.responder = self }
 }
