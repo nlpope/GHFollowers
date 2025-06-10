@@ -285,9 +285,9 @@
 		40C676DC2C0094DC006B64F8 /* GHFollowers */ = {
 			isa = PBXGroup;
 			children = (
+				40AFCC112C0A95D100A60EE7 /* Managers */,
 				405EBE9E2C090CF600A46C5D /* Extensions */,
 				4035C8062C0D6790002BE09C /* Utilities */,
-				40AFCC112C0A95D100A60EE7 /* Managers */,
 				40AFCC0C2C0A846900A60EE7 /* Models */,
 				405EBE902C01CF1500A46C5D /* CustomViews */,
 				4045F6152C0189CE00422790 /* Screens */,
