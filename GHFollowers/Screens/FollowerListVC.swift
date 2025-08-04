@@ -215,7 +215,6 @@ extension FollowerListVC: UICollectionViewDelegate {
     }
     
     
-    #warning("return to")
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // pass login onto userinfoVC
         // present userinfoVC
